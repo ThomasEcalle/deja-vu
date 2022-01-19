@@ -26,6 +26,7 @@ function onClick() {
         flex 
         flex-col 
         justify-center 
+        items-center
         cursor-pointer 
         border-solid 
         border-2 
@@ -37,7 +38,7 @@ function onClick() {
                 <svg 
                 v-if="showFirst" 
                 ref="first"
-                class="w-[26px] h-[15px] m-auto fill-current" 
+                class="w-[26px] h-[15px]  fill-current" 
                 viewBox="0 0 26 17" 
                 xmlns="http://www.w3.org/2000/svg">
                 <path  fill-rule="nonzero" d="M.875 3.656h16.25c.345 0 .625-.28.625-.625V1.47a.625.625 0 0 0-.625-.625H.875a.625.625 0 0 0-.625.625V3.03c0 .345.28.625.625.625zm.268 6.25h23.214c.493 0 .893-.28.893-.625V7.72c0-.345-.4-.625-.893-.625H1.143c-.493 0-.893.28-.893.625V9.28c0 .345.4.625.893.625zm-.268 6.25h16.25c.345 0 .625-.28.625-.625V13.97a.625.625 0 0 0-.625-.625H.875a.625.625 0 0 0-.625.625v1.562c0 .345.28.625.625.625z" />

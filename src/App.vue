@@ -27,30 +27,29 @@ function onModeClicked() {
 </script>
 
 <template>
-  <div class="h-screen bg-neutral-400 flex flex-col justify-around p-[25px]">
-    <AppBar
-        v-bind:onMenuClicked="onMenuClicked"
-        v-bind:onModeClicked="onModeClicked"
-        v-bind:onRandomClicked="onRandomClicked"
-      />
-      <div class="relative h-full">
-        <CustomTransitions>
-          <Home v-if="content === 'Home'"/>
-          <Menu v-else-if="content === 'Menu'"/>
-          <RandomComponent v-else-if="content === 'Random'"/>
-        </CustomTransitions>
-      </div>
-  
-    <BottomBar/>
-  </div>
+  <div>
+    <video class="absolute w-full h-full object-cover" autoplay muted loop>
+      <source src="./assets/test.mp4" type="video/mp4">
+    </video>
+    <div class="absolute z-2 h-screen w-screen flex flex-col justify-around p-[25px]">
+      <AppBar
+          v-bind:onMenuClicked="onMenuClicked"
+          v-bind:onModeClicked="onModeClicked"
+          v-bind:onRandomClicked="onRandomClicked"
+        />
+        <div class="relative h-full w-full">
+          <CustomTransitions>
+            <Home v-if="content === 'Home'"/>
+            <Menu v-else-if="content === 'Menu'"/>
+            <RandomComponent v-else-if="content === 'Random'"/>
+          </CustomTransitions>
+        </div>
+    
+      <BottomBar/>
+    </div>
+    </div>
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+
 </style>
