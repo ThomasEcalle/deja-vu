@@ -1,17 +1,21 @@
 <script setup>
 
 import {ref} from 'vue'
-import anime from 'animejs';
+import { useStore } from "vuex";
+import {CLOSE_MENU} from '../../constants'
 
 const props = defineProps({
   onTap: Function,
 })
 
-const showFirst = ref(true);
+const store = useStore();
 
 function onClick() {
-    showFirst.value = !showFirst.value;
-    props.onTap();  
+    if(store.state.menuVisible) {
+      store.commit(CLOSE_MENU);
+    } else {
+      props.onTap();  
+    }
 };
 
 </script>
@@ -36,7 +40,7 @@ function onClick() {
         ">
             <transition name="icons" mode="out-in">
                 <svg 
-                v-if="showFirst" 
+                v-if="!store.state.menuVisible" 
                 ref="first"
                 class="w-[26px] h-[15px]  fill-current" 
                 viewBox="0 0 26 17" 
