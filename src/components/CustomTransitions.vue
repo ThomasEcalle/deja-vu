@@ -1,7 +1,7 @@
 
 <script setup>
 
-    import anime from 'animejs';
+import anime from 'animejs';
  // --------
   // ENTERING
   // --------
@@ -17,7 +17,7 @@
         targets: el.getElementsByClassName("toto"),
         translateY: [30, 0],
         opacity: [0, 1],
-        easing: 'easeInQuad',
+        easing: 'easeInOutQuad',
         duration: 600,
         delay: anime.stagger(300),
         complete: done,
@@ -41,7 +41,7 @@
         targets: el.getElementsByClassName("toto"),
         translateY: [0, -30],
         opacity: [1, 0],
-        easing: 'easeOutQuad',
+        easing: 'easeInOutQuad',
         duration: 600,
         delay: anime.stagger(300),
         complete: done,

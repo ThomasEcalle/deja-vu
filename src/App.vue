@@ -27,7 +27,7 @@ function onModeClicked() {
 </script>
 
 <template>
-  <div class="h-screen bg-current flex flex-col justify-around p-[25px]">
+  <div class="h-screen bg-neutral-400 flex flex-col justify-around p-[25px]">
     <AppBar
         v-bind:onMenuClicked="onMenuClicked"
         v-bind:onModeClicked="onModeClicked"
