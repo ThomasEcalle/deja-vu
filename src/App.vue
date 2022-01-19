@@ -33,6 +33,7 @@ function onModeClicked() {
     <video class="absolute w-full h-full object-cover" autoplay muted loop>
       <source src="./assets/test.mp4" type="video/mp4">
     </video>
+    <div class="absolute w-full h-full bg-[#ddd2bc] opacity-30" />
     <div class="absolute z-2 h-screen w-screen flex flex-col justify-around p-[25px]">
       <AppBar
           v-bind:onMenuClicked="onMenuClicked"

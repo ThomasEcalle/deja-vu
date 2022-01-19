@@ -1,36 +1,57 @@
 .icons-enter-active {
-    animation: iconEntering ease-in-out 500ms;
-  }
-  .icons-leave-active {
-    animation: iconLeaving ease-in-out 500ms;
-  }
+  animation: moveIn ease-in-out 500ms, opacityIn ease-in-out 500ms;
+}
+
+.icons-leave-active {
+  animation: moveOut ease-in-out 500ms, opacityOut ease-in-out 500ms;
+}
   
-  @keyframes iconEntering {
+  @keyframes moveIn {
     0% {
       transform: translate(0px, 20px);
-      opacity: 0;
     }
-    50% {
-      transform: translate(0px, 10px);
-      opacity: 0.8;
-    }
+    
     100% {
       transform: translate(0px, 0px);
+    }
+  }
+
+  @keyframes moveOut {
+    0% {
+      transform: translate(0px, 0px);
+    }
+    
+    100% {
+      transform: translate(0px, -20px);
+    }
+  }
+
+  @keyframes opacityIn {
+    0% {
+      opacity: 0;
+    }
+    
+    60% {
       opacity: 1;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes opacityOut {
+    0% {
+      opacity: 1;
+    }
+    
+    60% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 0;
     }
   }
   
-  @keyframes iconLeaving {
-    0% {
-      transform: translate(0px, 0px);
-      opacity: 1;
-    }
-    50% {
-      transform: translate(0px, -10px);
-      opacity: 0.2;
-    }
-    100% {
-      transform: translate(0px, -20px);
-      opacity: 0;
-    }
-  }
+  
