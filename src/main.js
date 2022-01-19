@@ -1,6 +1,10 @@
-import { createApp } from 'vue'
+import { createApp, reactive } from 'vue'
 import App from './App.vue' 
 import './index.css'
-import anime from 'animejs';
+import { createStore } from 'vuex'
+import store from './store'
 
-createApp(App).mount('#app')
+const app = createApp(App);
+
+app.use(store);
+app.mount('#app');

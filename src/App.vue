@@ -9,19 +9,20 @@ import Home from './components/Home.vue';
 import Menu from './components/Menu.vue';
 import CustomTransitions from './components/CustomTransitions.vue';
 import RandomComponent from './components/RandomComponent.vue';
+import { useStore } from "vuex";
 
-var content = ref("Home");
+const store = useStore();
 
 function onRandomClicked() {
-  content.value = "Random";
+  store.commit('setContent', "Random");
 }
 
 function onMenuClicked() {
-  content.value = "Menu";
+  store.commit('setContent', "Menu");
 }
 
 function onModeClicked() {
-  content.value = "Home";
+  store.commit('setContent', "Home");
 }
 
 </script>
@@ -39,9 +40,9 @@ function onModeClicked() {
         />
         <div class="relative h-full w-full">
           <CustomTransitions>
-            <Home v-if="content === 'Home'"/>
-            <Menu v-else-if="content === 'Menu'"/>
-            <RandomComponent v-else-if="content === 'Random'"/>
+            <Home v-if="store.state.content === 'Home'"/>
+            <Menu v-else-if="store.state.content === 'Menu'"/>
+            <RandomComponent v-else-if="store.state.content === 'Random'"/>
           </CustomTransitions>
         </div>
     
