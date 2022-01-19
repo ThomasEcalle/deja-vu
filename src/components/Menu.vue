@@ -5,10 +5,10 @@ import { ref } from 'vue'
 
 <template>
     <div class="absolute h-full w-full flex flex-col justify-center text-white">
-       <h2>Voici le menu</h2>
+       <h2 class="toto">Voici le menu</h2>
        <ul>
-           <li>Titre 1</li>
-           <li>Titre 2</li>
+           <li class="toto">Titre 1</li>
+           <li class="toto">Titre 2</li>
        </ul>
     </div>
 </template>

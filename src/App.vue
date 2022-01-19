@@ -7,8 +7,14 @@ import AppBar from './components/AppBar.vue';
 import BottomBar from './components/BottomBar.vue';
 import Home from './components/Home.vue';
 import Menu from './components/Menu.vue';
+import CustomTransitions from './components/CustomTransitions.vue';
+import RandomComponent from './components/RandomComponent.vue';
 
 var content = ref("Home");
+
+function onRandomClicked() {
+  content.value = "Random";
+}
 
 function onMenuClicked() {
   content.value = "Menu";
@@ -25,14 +31,14 @@ function onModeClicked() {
     <AppBar
         v-bind:onMenuClicked="onMenuClicked"
         v-bind:onModeClicked="onModeClicked"
+        v-bind:onRandomClicked="onRandomClicked"
       />
       <div class="relative h-full">
-        <transition appear name="fade">
-          <Home v-if="content == 'Home'"/>
-        </transition>
-        <transition name="fade">
-          <Menu v-if="content == 'Menu'"/>
-        </transition>
+        <CustomTransitions>
+          <Home v-if="content === 'Home'"/>
+          <Menu v-else-if="content === 'Menu'"/>
+          <RandomComponent v-else-if="content === 'Random'"/>
+        </CustomTransitions>
       </div>
   
     <BottomBar/>
