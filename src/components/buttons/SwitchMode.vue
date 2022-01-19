@@ -28,6 +28,7 @@ function onClick() {
         border-solid 
         border-2 
         border-current
+        dark:border-white
         hover:bg-transparent/[.1]
         duration-500
         ">
