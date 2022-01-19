@@ -41,7 +41,6 @@ function onClick() {
             <transition name="icons" mode="out-in">
                 <svg 
                 v-if="!store.state.menuVisible" 
-                ref="first"
                 class="w-[26px] h-[15px]  fill-current" 
                 viewBox="0 0 26 17" 
                 xmlns="http://www.w3.org/2000/svg">
@@ -49,7 +48,6 @@ function onClick() {
                 </svg>
                 <svg 
                     v-else 
-                    ref="second"
                     class="w-[26px] h-[15px] m-auto fill-current group-hover:fill-blue-500" 
                     viewBox="0 0 17 17" 
                     xmlns="http://www.w3.org/2000/svg">
@@ -61,40 +59,5 @@ function onClick() {
 </template>
 
 <style scoped>
-.icons-enter-active {
-  animation: iconEntering ease-in-out 500ms;
-}
-.icons-leave-active {
-  animation: iconLeaving ease-in-out 500ms;
-}
 
-@keyframes iconEntering {
-  0% {
-    transform: translate(0px, 20px);
-    opacity: 0;
-  }
-  50% {
-    transform: translate(0px, 10px);
-    opacity: 0.8;
-  }
-  100% {
-    transform: translate(0px, 0px);
-    opacity: 1;
-  }
-}
-
-@keyframes iconLeaving {
-  0% {
-    transform: translate(0px, 0px);
-    opacity: 1;
-  }
-  50% {
-    transform: translate(0px, -10px);
-    opacity: 0.2;
-  }
-  100% {
-    transform: translate(0px, -20px);
-    opacity: 0;
-  }
-}
 </style>

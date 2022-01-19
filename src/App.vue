@@ -10,7 +10,7 @@ import Menu from './components/Menu.vue';
 import CustomTransitions from './components/CustomTransitions.vue';
 import RandomComponent from './components/RandomComponent.vue';
 import { useStore } from "vuex";
-import {HOME, MENU, SET_CONTENT, OPEN_MENU} from './constants'
+import {HOME, SET_CONTENT, OPEN_MENU} from './constants'
 
 const store = useStore();
 

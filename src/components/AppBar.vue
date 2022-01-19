@@ -3,6 +3,7 @@
 import { ref } from 'vue'
 import IconButton from './IconButton.vue';
 import MenuButton from './buttons/MenuButton.vue'
+import SwitchMode from './buttons/SwitchMode.vue';
 
 defineProps({
   onMenuClicked: Function,
@@ -15,8 +16,7 @@ defineProps({
 <template>
     <div class="h-[90px] flex flex-row justify-between items-center">
         <MenuButton v-bind:onTap="onMenuClicked" />
-        <IconButton v-bind:onTap="onRandomClicked"/>
-        <IconButton v-bind:onTap="onModeClicked"/>
+        <SwitchMode v-bind:onTap="onModeClicked"/>
     </div>
 </template>
 
