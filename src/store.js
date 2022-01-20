@@ -9,11 +9,13 @@ export default new Vuex.Store({
         lastContent: HOME,
         pages: [
             {
+                id: 0,
                 menuTitle: "Mariages",
                 detailTitle: "Mariages Détail !",
                 b2c: true,
             },
             {
+                id: 1,
                 menuTitle: "Anniversaires",
                 detailTitle: "Mariages Détail !",
                 b2c: false,

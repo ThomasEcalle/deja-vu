@@ -1,8 +1,9 @@
 
 <script setup>
 import { ref } from 'vue'
-import { MENU } from './../constants'
+import { MENU } from '../../constants'
 import { useStore } from "vuex";
+import MenuItem from './MenuItem.vue';
 
 const store = useStore();
 
@@ -23,7 +24,7 @@ console.log(JSON.stringify(b2bPages));
                 <h3 class="dejavu text-[12px] mb-[20px]">Particuliers</h3>
                 <ul>
                     <li v-for="item in b2cPages">
-                        <li class="dejavu">{{item.menuTitle}}</li>
+                        <MenuItem :title="item.menuTitle" />
                     </li>
                 </ul>
             </div>
@@ -31,7 +32,7 @@ console.log(JSON.stringify(b2bPages));
                 <h3 class="dejavu text-[12px] mb-[20px]">Professionnels</h3>
                 <ul>
                     <li v-for="item in b2bPages">
-                        <li class="dejavu">{{item.menuTitle}}</li>
+                         <MenuItem :title="item.menuTitle" />
                     </li>
                 </ul>
             </div>

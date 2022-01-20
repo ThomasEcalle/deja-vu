@@ -5,7 +5,7 @@
 import AppBar from './components/AppBar.vue';
 import BottomBar from './components/BottomBar.vue';
 import Home from './components/Home.vue';
-import Menu from './components/Menu.vue';
+import Menu from './components/Menu/Menu.vue';
 import CustomTransitions from './components/CustomTransitions.vue';
 import RandomComponent from './components/RandomComponent.vue';
 import { useStore } from "vuex";
