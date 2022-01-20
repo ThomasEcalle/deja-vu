@@ -1,0 +1,65 @@
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 1s;
+}
+
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
+{
+    opacity: 0;
+}
+
+.icons-enter-active {
+    animation: moveIn ease-in-out 500ms, opacityIn ease-in-out 500ms;
+}
+
+.icons-leave-active {
+    animation: moveOut ease-in-out 500ms, opacityOut ease-in-out 500ms;
+}
+
+@keyframes moveIn {
+    0% {
+        transform: translate(0px, 20px);
+    }
+
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+
+@keyframes moveOut {
+    0% {
+        transform: translate(0px, 0px);
+    }
+
+    100% {
+        transform: translate(0px, -20px);
+    }
+}
+
+@keyframes opacityIn {
+    0% {
+        opacity: 0;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes opacityOut {
+    0% {
+        opacity: 1;
+    }
+
+    60% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+

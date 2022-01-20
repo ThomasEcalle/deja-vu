@@ -1,8 +1,10 @@
-import { createApp, reactive } from 'vue'
+import { createApp } from 'vue'
 import App from './App.vue'
-import './index.css'
 import store from './store'
-import './more.css'
+
+import './assets/index.css'
+import './assets/fonts.css'
+import './assets/more.css'
 
 const app = createApp(App);
 

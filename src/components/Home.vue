@@ -1,6 +1,5 @@
 
 <script setup>
-import './../index.css'
 import { HOME } from '../constants';
 </script>
 

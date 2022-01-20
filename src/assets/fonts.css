@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'LemonMilk';
+    font-weight: normal;
+    font-style: normal;
+    src: local('LemonMilk'), url('./fonts/LemonMilk-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'LemonMilk';
+    font-weight: bold;
+    font-style: normal;
+    src: local('LemonMilk'), url('./fonts/LemonMilk-Bold.ttf') format('truetype');
+}
