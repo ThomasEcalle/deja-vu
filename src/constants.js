@@ -1,3 +1,4 @@
+export const FETCH_PAGES = "fetchPages"
 export const MENU = "Menu";
 export const HOME = "Home";
 export const PAGE_DETAIL = "pageDetail";

@@ -1,5 +1,6 @@
 import Vuex from 'vuex'
-import { MENU, HOME, SET_CONTENT, CLOSE_MENU, OPEN_MENU, TOGGLE_DARKMODE, OPEN_PAGE_DETAIL, PAGE_DETAIL } from './constants'
+import { MENU, HOME, SET_CONTENT, CLOSE_MENU, OPEN_MENU, TOGGLE_DARKMODE, OPEN_PAGE_DETAIL, PAGE_DETAIL, FETCH_PAGES } from './constants'
+import { Page } from './models/Page'
 
 export default new Vuex.Store({
     state: {
@@ -8,28 +9,36 @@ export default new Vuex.Store({
         content: HOME,
         lastContent: HOME,
         selectedPage: null,
-        pages: [
-            {
-                id: 0,
-                menuTitle: "Popup store",
-                detailTitleStrokedPart: "Pop-up store",
-                detailTitleNormalPart: "virtuel",
-                subTitle: "La révolution de l'expérience client",
-                description: "Lorem Ipsum",
-                b2c: true,
-            },
-            {
-                id: 1,
-                menuTitle: "Mariages",
-                detailTitleStrokedPart: "Mariages",
-                detailTitleNormalPart: null,
-                subTitle: "La révolution des mariages",
-                description: "Lorem Ipsum",
-                b2c: false,
-            },
-        ],
+        pages: [],
     },
     mutations: {
+        async [FETCH_PAGES](state) {
+            const res = await fetch('http://localhost:8055/items/Pages', {
+                method: 'get',
+                headers: {
+                    'content-type': 'application/json'
+                }
+            });
+
+            if (!res.ok) {
+                console.log(`Error retrieving pages: ${res.statusText}`);
+            } else {
+                const json = await res.json();
+                for (var i = 0; i < json.data.length; i++) {
+                    const item = json.data[i];
+                    state.pages.push(
+                        new Page(
+                            item.menuTitle,
+                            item.detailTitleStroked,
+                            item.detailTitleNormal,
+                            item.subtitle,
+                            item.description,
+                            item.b2c,
+                        )
+                    );
+                }
+            }
+        },
         [SET_CONTENT](state, newValue) {
             state.lastContent = state.content;
             state.menuVisible = newValue == MENU;
