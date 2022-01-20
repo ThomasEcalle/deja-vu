@@ -11,7 +11,11 @@ export default function (element, done) {
         duration: 600,
         delay: anime.stagger(300),
         complete: (anim) => {
-            anim.seek(0);
+            anim.set();
+            for (var i = 0; i < targets.length; i++) {
+                targets[i].style = null;
+            }
+            done();
         },
     })
 }
