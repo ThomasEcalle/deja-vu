@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       fontFamily: {
         'lemonmilk': ['LemonMilk', 'ui-sans-serif', 'sans-serif'],
+        'sans': ['Montserrat'],
       },
     }
   },
