@@ -9,7 +9,7 @@ import Menu from './components/Menu/Menu.vue';
 import CustomTransitions from './components/CustomTransitions.vue';
 import { useStore } from "vuex";
 import { HOME, SET_CONTENT, OPEN_MENU, MENU, PAGE_DETAIL, FETCH_PAGES } from './constants'
-import PageDetail from './components/PageDetail.vue';
+import PageDetail from './components/PageDetail/PageDetail.vue';
 
 const store = useStore();
 

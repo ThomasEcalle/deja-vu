@@ -28,12 +28,14 @@ export default new Vuex.Store({
                     const item = json.data[i];
                     state.pages.push(
                         new Page(
+                            item.id,
                             item.menuTitle,
                             item.detailTitleStroked,
                             item.detailTitleNormal,
                             item.subtitle,
                             item.description,
                             item.b2c,
+                            item.videoLink,
                         )
                     );
                 }

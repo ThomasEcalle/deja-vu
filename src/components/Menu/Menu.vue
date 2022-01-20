@@ -19,7 +19,7 @@ function onClick(itemId) {
     <div class="absolute h-full w-full dark:text-white text-black mt-[40px] pl-[39px]" :id="MENU">
         <div class="w-[500px] grid grid-cols-2">
             <div>
-                <h3 class="dejavu text-[12px] mb-[20px]">Particuliers</h3>
+                <h3 class="menu-category text-[12px] mb-[20px]">Particuliers</h3>
                 <ul>
                     <li v-for="item in b2cPages">
                         <MenuItem :title="item.menuTitle" :onClick="() => onClick(item.id)" />
@@ -27,7 +27,7 @@ function onClick(itemId) {
                 </ul>
             </div>
             <div>
-                <h3 class="dejavu text-[12px] mb-[20px]">Professionnels</h3>
+                <h3 class="menu-category text-[12px] mb-[20px]">Professionnels</h3>
                 <ul>
                     <li v-for="item in b2bPages">
                         <MenuItem :title="item.menuTitle" :onClick="() => onClick(item.id)" />

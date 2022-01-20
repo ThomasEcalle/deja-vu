@@ -11,7 +11,7 @@ defineProps({
 <template>
     <li
         :onClick="onClick"
-        class="dejavu font-montserrat font-bold cursor-pointer hover:opacity-30 hover:duration-500"
+        class="menu-item font-montserrat font-bold cursor-pointer hover:ml-[10px] hover:opacity-60 hover:duration-700 leading-[34px]"
     >{{ title }}</li>
 </template>
 

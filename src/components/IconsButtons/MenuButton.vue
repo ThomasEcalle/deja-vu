@@ -33,7 +33,7 @@ function onClick() {
         items-center
         cursor-pointer 
         border-solid 
-        border-2 
+        border-[1px] 
         border-current
         dark:border-white
         hover:bg-transparent/[.1]

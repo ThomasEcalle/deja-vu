@@ -2,8 +2,8 @@
 <script setup>
 import { ref } from 'vue'
 import IconButton from './IconButton.vue';
-import MenuButton from './buttons/MenuButton.vue'
-import SwitchMode from './buttons/SwitchMode.vue';
+import MenuButton from './IconsButtons/MenuButton.vue'
+import SwitchMode from './IconsButtons/SwitchMode.vue';
 
 defineProps({
   onMenuClicked: Function,
