@@ -6,8 +6,13 @@ export default function (element, done) {
 
     var timeline = anime.timeline({
         easing: 'easeInOutCubic',
-        duration: 1000,
-        complete: done,
+        duration: 800,
+        complete: (anim) => {
+            for (var i = 0; i < menuItem.length; i++) {
+                menuItem[i].style = null;
+            }
+            done();
+        },
     });
 
     timeline

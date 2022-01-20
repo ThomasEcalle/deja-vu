@@ -6,7 +6,7 @@ export default function (element, done) {
 
     var timeline = anime.timeline({
         easing: 'easeInOutCubic',
-        duration: 1000,
+        duration: 800,
         complete: done,
     });
 
