@@ -6,8 +6,8 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: {
-        'main': '#243c5a',
+      fontFamily: {
+        'lemonmilk': ['LemonMilk', 'ui-sans-serif', 'sans-serif'],
       },
     }
   },
