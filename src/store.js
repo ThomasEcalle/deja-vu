@@ -7,6 +7,18 @@ export default new Vuex.Store({
         darkMode: false,
         content: HOME,
         lastContent: HOME,
+        pages: [
+            {
+                menuTitle: "Mariages",
+                detailTitle: "Mariages Détail !",
+                b2c: true,
+            },
+            {
+                menuTitle: "Anniversaires",
+                detailTitle: "Mariages Détail !",
+                b2c: false,
+            },
+        ],
     },
     mutations: {
         [SET_CONTENT] (state, newValue) {

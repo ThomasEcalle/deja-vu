@@ -3,8 +3,8 @@
 </script>
 
 <template>
-    <div class="h-[90px] bg-amber-600">
-        Bottom
+    <div class="h-[90px]">
+        
     </div>
 </template>
 

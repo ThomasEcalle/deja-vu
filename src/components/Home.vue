@@ -1,16 +1,20 @@
 
 <script setup>
 import './../index.css'
-
+import { HOME } from '../constants';
 </script>
 
 <template>
-      <div class="absolute h-full w-full flex flex-col items-center justify-center">
-          <h2 class="toto dark:text-white text-black text-4xl leading-[50px]">Nous abolissons les frontières de l’espace</h2>
-          <h2 class="toto dark:text-white text-black text-4xl leading-[50px]">et du temps en créant des experiences immersives</h2>
-      </div>
+    <div
+        class="absolute h-full w-full flex flex-col items-center justify-center dark:text-white text-black"
+        :id="HOME"
+    >
+        <h2 class="dejavu text-[30px] leading-[50px]">Nous abolissons les frontières de l’espace</h2>
+        <h2
+            class="dejavu text-[30px] leading-[50px]"
+        >et du temps en créant des experiences immersives</h2>
+    </div>
 </template>
 
 <style scoped>
-
 </style>
