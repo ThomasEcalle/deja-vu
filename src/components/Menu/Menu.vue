@@ -1,19 +1,17 @@
 
 <script setup>
-import { ref } from 'vue'
-import { MENU } from '../../constants'
+import { MENU, OPEN_PAGE_DETAIL } from '../../constants'
 import { useStore } from "vuex";
 import MenuItem from './MenuItem.vue';
 
 const store = useStore();
 
-const pages = store.state.pages;
+const b2cPages = store.getters.b2cPages;
+const b2bPages = store.getters.b2bPages;
 
-const b2cPages = pages.filter(page => page.b2c);
-const b2bPages = pages.filter(page => !page.b2c);
-
-console.log(JSON.stringify(b2cPages));
-console.log(JSON.stringify(b2bPages));
+function onClick(itemId) {
+    store.commit(OPEN_PAGE_DETAIL, itemId);
+}
 
 </script>
 
@@ -24,7 +22,7 @@ console.log(JSON.stringify(b2bPages));
                 <h3 class="dejavu text-[12px] mb-[20px]">Particuliers</h3>
                 <ul>
                     <li v-for="item in b2cPages">
-                        <MenuItem :title="item.menuTitle" />
+                        <MenuItem :title="item.menuTitle" :onClick="() => onClick(item.id)" />
                     </li>
                 </ul>
             </div>
@@ -32,7 +30,7 @@ console.log(JSON.stringify(b2bPages));
                 <h3 class="dejavu text-[12px] mb-[20px]">Professionnels</h3>
                 <ul>
                     <li v-for="item in b2bPages">
-                         <MenuItem :title="item.menuTitle" />
+                        <MenuItem :title="item.menuTitle" :onClick="() => onClick(item.id)" />
                     </li>
                 </ul>
             </div>

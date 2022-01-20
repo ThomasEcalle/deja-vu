@@ -1,7 +1,6 @@
 import anime from 'animejs';
 
 export default function (element, done) {
-    console.log("Entering Menu");
     const targets = element.getElementsByClassName("dejavu");
     anime({
         targets: targets,

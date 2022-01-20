@@ -7,15 +7,11 @@ import BottomBar from './components/BottomBar.vue';
 import Home from './components/Home.vue';
 import Menu from './components/Menu/Menu.vue';
 import CustomTransitions from './components/CustomTransitions.vue';
-import RandomComponent from './components/RandomComponent.vue';
 import { useStore } from "vuex";
-import {HOME, SET_CONTENT, OPEN_MENU} from './constants'
+import {HOME, SET_CONTENT, OPEN_MENU, MENU, PAGE_DETAIL} from './constants'
+import PageDetail from './components/PageDetail.vue';
 
 const store = useStore();
-
-function onRandomClicked() {
-  store.commit(SET_CONTENT, HOME);
-}
 
 function onMenuClicked() {
   store.commit(OPEN_MENU);
@@ -44,15 +40,14 @@ function onModeClicked() {
 
     <div class="absolute z-2 h-screen w-screen flex flex-col justify-around p-[25px]">
       <AppBar
-          v-bind:onMenuClicked="onMenuClicked"
-          v-bind:onModeClicked="onModeClicked"
-          v-bind:onRandomClicked="onRandomClicked"
+          :onMenuClicked="onMenuClicked"
+          :onModeClicked="onModeClicked"
         />
         <div class="relative h-full w-full">
           <CustomTransitions>
-            <Home v-if="store.state.content === 'Home'"/>
-            <Menu v-else-if="store.state.content === 'Menu'"/>
-            <RandomComponent v-else-if="store.state.content === 'Random'"/>
+            <Home v-if="store.state.content === HOME"/>
+            <Menu v-else-if="store.state.content === MENU"/>
+            <PageDetail v-else-if="store.state.content === PAGE_DETAIL"/>
           </CustomTransitions>
         </div>
     

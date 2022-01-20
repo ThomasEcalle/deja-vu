@@ -3,10 +3,8 @@
 
 import anime from 'animejs';
 import { useStore } from "vuex";
-import homeEnterAnimation from '../animations/homeEnterAnimation';
-import homeLeaveAnimation from '../animations/homeLeaveAnimation';
-import menuEnterAnimation from '../animations/menuEnterAnimation';
-import menuLeaveAnimation from '../animations/menuLeaveAnimation';
+import defaultEnterAnimation from '../animations/defaultEnterAnimation';
+import defaultLeaveAnimation from '../animations/defaultLeaveAnimation';
 import { HOME, MENU } from './../constants'
 
 
@@ -20,11 +18,8 @@ const beforeEnter = function (el) {
 const enter = async function (el, done) {
   const elementId = el.id;
   switch (elementId) {
-    case HOME:
-      homeEnterAnimation(el, done);
-      break;
-    case MENU:
-      menuEnterAnimation(el, done);
+    default:
+      defaultEnterAnimation(el, done);
       break;
   }
 };
@@ -44,11 +39,8 @@ const beforeLeave = function (el) { };
 const leave = async function (el, done) {
   const elementId = el.id;
   switch (elementId) {
-    case HOME:
-      homeLeaveAnimation(el, done);
-      break;
-    case MENU:
-      menuLeaveAnimation(el, done);
+    default:
+      defaultLeaveAnimation(el, done);
       break;
   }
 };

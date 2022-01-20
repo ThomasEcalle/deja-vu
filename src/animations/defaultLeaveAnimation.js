@@ -1,7 +1,6 @@
 import anime from 'animejs';
 
 export default function (element, done) {
-    console.log("Leaving Menu");
     anime({
         targets: element.getElementsByClassName("dejavu"),
         translateY: [0, -30],
