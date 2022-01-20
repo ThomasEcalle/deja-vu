@@ -2,6 +2,18 @@
 <script setup>
 import { ref } from 'vue'
 import { MENU } from './../constants'
+import { useStore } from "vuex";
+
+const store = useStore();
+
+const pages = store.state.pages;
+
+const b2cPages = pages.filter(page => page.b2c);
+const b2bPages = pages.filter(page => !page.b2c);
+
+console.log(JSON.stringify(b2cPages));
+console.log(JSON.stringify(b2bPages));
+
 </script>
 
 <template>
@@ -10,15 +22,17 @@ import { MENU } from './../constants'
             <div>
                 <h3 class="dejavu text-[12px] mb-[20px]">Particuliers</h3>
                 <ul>
-                    <li class="dejavu" data-order="2">Titre 1</li>
-                    <li class="dejavu" data-order="2">Titre 2</li>
+                    <li v-for="item in b2cPages">
+                        <li class="dejavu">{{item.menuTitle}}</li>
+                    </li>
                 </ul>
             </div>
             <div>
                 <h3 class="dejavu text-[12px] mb-[20px]">Professionnels</h3>
                 <ul>
-                    <li class="dejavu" data-order="3">Titre 3</li>
-                    <li class="dejavu" data-order="3">Titre 4</li>
+                    <li v-for="item in b2bPages">
+                        <li class="dejavu">{{item.menuTitle}}</li>
+                    </li>
                 </ul>
             </div>
         </div>
