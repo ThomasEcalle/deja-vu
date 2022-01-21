@@ -13,7 +13,7 @@ function onClick() {
 <template>
     <svg
         :onClick="onClick"
-        class="cursor-pointer duration-1000 hover:scale-[0.85]"
+        class="cursor-pointer duration-1000 hover:scale-[0.9]"
         width="256"
         height="43"
         viewBox="0 0 256 43"

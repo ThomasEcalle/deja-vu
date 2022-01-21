@@ -35,6 +35,7 @@ function onClick() {
         border-current
         dark:border-white
         hover:bg-transparent/[.1]
+        hover:scale-[0.9]
         duration-1000
         ">
             <transition name="icons" mode="out-in">
