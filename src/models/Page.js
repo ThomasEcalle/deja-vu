@@ -18,7 +18,4 @@ export class Page {
         this.b2c = b2c;
         this.videoLink = videoLink;
     }
-    toString() {
-        console.log(JSON.stringify(this));
-    }
 }

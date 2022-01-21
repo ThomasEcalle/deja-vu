@@ -11,6 +11,10 @@ const props = defineProps({
 
 const store = useStore();
 
+const options = store.getters.allPages;
+
+console.log(options);
+
 </script>
 
 <template>
@@ -23,9 +27,7 @@ const store = useStore();
                 name="name"
                 id="name"
             >
-                <option class="text-current">New Mexico</option>
-                <option>Missouri</option>
-                <option>Texas</option>
+                <option v-for="item in options" class="text-current" :value="item">{{ item }}</option>
             </select>
             <div
                 class="pointer-events-none absolute inset-y-0 right-5 flex items-center px-2 text-gray-700"
@@ -53,7 +55,6 @@ svg.dark {
     fill: white;
 }
 select {
-    
     color: black;
 }
 

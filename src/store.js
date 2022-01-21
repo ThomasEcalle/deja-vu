@@ -1,4 +1,5 @@
 import Vuex from 'vuex'
+import { storeKey } from 'vuex/dist/vuex.cjs';
 import { MENU, HOME, SET_CONTENT, CLOSE_MENU, OPEN_MENU, TOGGLE_DARKMODE, OPEN_PAGE_DETAIL, PAGE_DETAIL, FETCH_PAGES } from './constants'
 import { Page } from './models/Page'
 
@@ -75,6 +76,15 @@ export default new Vuex.Store({
         },
         b2bPages: (state) => {
             return state.pages.filter(page => !page.b2c);
+        },
+        allPages: (state) => {
+            const result = [];
+
+            state.pages.forEach(element => {
+                result.push(element.menuTitle);
+            });
+
+            return result;
         },
         getSelectedPage: (state) => {
             return state.selectedPage;

@@ -5,7 +5,6 @@ const props = defineProps({
     videoLink: String,
 })
 
-console.log(props.videoLink);
 </script>
 
 <template>

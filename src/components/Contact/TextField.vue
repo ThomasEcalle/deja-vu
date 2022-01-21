@@ -6,7 +6,7 @@ const props = defineProps({
     name: String,
     labelText: String,
     missing: Boolean,
-    placeHolder: String,
+    placeHolderText: String,
 });
 
 const store = useStore();
@@ -20,7 +20,7 @@ const store = useStore();
             :type="type"
             :name="name"
             :id="name"
-            :placeholder="placeHolder"
+            :placeholder="placeHolderText"
             :class="{ dark: store.state.darkMode }"
             class="transition-colors duration-1000 text-current cursor-pointer block h-[2.8vmax] mt-[0.8vmax] shadow appearance-none border border-current rounded-md w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline bg-transparent"
         />
@@ -37,7 +37,7 @@ input {
 input::placeholder {
     transition-duration: 1000ms;
     transition-property: color;
-    color: black;
+    color: #00000075;
 }
 input.dark::placeholder {
     color: white;

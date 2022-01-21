@@ -4,8 +4,6 @@ import TextField from './TextField.vue';
 import SelectField from './SelectField.vue';
 import TextArea from './TextArea.vue';
 
-var missingFirstName = false;
-
 </script>
 
 <template>
@@ -19,14 +17,18 @@ var missingFirstName = false;
             <h2>Contactez-nous</h2>
         </div>
         <div class="h-full w-[55vw] capitalize font-normal">
-            <form class="w-[80%] h-full grid grid-cols-2 gap-[2vmax] py-[10px] placeholder-current place-content-center" action="/" method="post">
+            <form
+                class="w-[80%] h-full grid grid-cols-2 gap-[2vmax] py-[10px] placeholder-current place-content-center"
+                action="/"
+                method="post"
+            >
                 <TextField
                     class="basis-1/2"
                     type="text"
                     name="first_name"
                     labelText="Prénom"
                     :missing="false"
-                    placeHolder="Saisir votre prénom"
+                    placeHolderText="Saisir votre prénom"
                 />
                 <TextField
                     class="basis-1/2"
@@ -34,7 +36,7 @@ var missingFirstName = false;
                     name="last_name"
                     labelText="Nom"
                     :missing="false"
-                    placeHolder="Saisir votre nom"
+                    placeHolderText="Saisir votre nom"
                 />
                 <TextField
                     class="basis-1/2"
@@ -42,7 +44,7 @@ var missingFirstName = false;
                     name="email"
                     labelText="Adresse email"
                     :missing="false"
-                    placeHolder="Saisir votre email"
+                    placeHolderText="Saisir votre email"
                 />
                 <TextField
                     class="basis-1/2"
@@ -50,14 +52,14 @@ var missingFirstName = false;
                     name="phone_number"
                     labelText="N° de téléphone"
                     :missing="false"
-                    placeHolder="Saisir votre téléphone"
+                    placeHolderText="Saisir votre téléphone"
                 />
                 <SelectField class="col-span-2" name="offers" labelText="Offres" />
                 <TextArea
                     class="col-span-2"
                     labelText="Message"
                     name="message"
-                    placeHolder="Décrire votre projet ici"
+                    placeHolderText="Décrire votre projet ici"
                 />
             </form>
         </div>
