@@ -12,12 +12,12 @@ const page = store.getters.getSelectedPage;
 
 <template>
     <div
-        class="absolute h-full w-full dark:text-white text-black pt-[12vh] pl-[6vw]"
+        class="absolute h-full w-full dark:text-white text-black pt-[12vh] pl-[6vw] duration-1000"
         :id="PAGE_DETAIL"
     >
         <div
             id="detail-title"
-            class="flex flex-row font-lemonmilk justify-start items-center text-[6vmax] uppercase leading-[90px]"
+            class="flex flex-row font-lemonmilk justify-start items-center text-[6.3vmax] uppercase leading-[90px]"
         >
             <h3 class="stroked mr-[12px]">{{ page.detailTitleStroked }}</h3>
             <h3 class="mr-[12px]">{{ page.detailTitleNormal }}</h3>

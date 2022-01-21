@@ -1,6 +1,4 @@
 <script setup>
-
-import {ref} from 'vue'
 import { useStore } from "vuex";
 import {CLOSE_MENU} from '../../constants'
 
@@ -37,7 +35,7 @@ function onClick() {
         border-current
         dark:border-white
         hover:bg-transparent/[.1]
-        duration-500
+        duration-1000
         ">
             <transition name="icons" mode="out-in">
                 <svg 

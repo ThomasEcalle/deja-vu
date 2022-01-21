@@ -5,7 +5,7 @@ import { HOME } from '../constants';
 
 <template>
     <div
-        class="absolute h-full w-full flex flex-col items-center justify-center dark:text-white text-black font-lemonmilk font-normal uppercase"
+        class="absolute h-full w-full flex flex-col items-center justify-center dark:text-white text-black font-lemonmilk font-normal uppercase duration-1000"
         :id="HOME"
     >
         <h2

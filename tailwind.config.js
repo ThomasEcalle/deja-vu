@@ -6,6 +6,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        transparent: 'transparent',
+        current: '#000000',
+      },
       fontFamily: {
         'lemonmilk': ['LemonMilk', 'ui-sans-serif', 'sans-serif'],
         'sans': ['Montserrat'],

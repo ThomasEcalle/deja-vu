@@ -16,7 +16,7 @@ function onClick(itemId) {
 </script>
 
 <template>
-    <div class="absolute h-full w-full dark:text-white text-black mt-[40px] pl-[39px]" :id="MENU">
+    <div class="absolute h-full w-full dark:text-white text-black mt-[40px] pl-[39px] duration-1000" :id="MENU">
         <div class="w-[500px] grid grid-cols-2">
             <div>
                 <h3 class="menu-category text-[12px] mb-[20px]">Particuliers</h3>
