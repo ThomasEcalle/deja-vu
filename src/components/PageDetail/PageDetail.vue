@@ -12,7 +12,7 @@ const page = store.getters.getSelectedPage;
 
 <template>
     <div
-        class="absolute h-full w-full dark:text-white text-black pt-[12vh] pl-[6vw] duration-1000"
+        class="absolute h-full w-full dark:text-white text-black pt-[12vh] pl-[6vw] transition-colors duration-1000"
         :id="PAGE_DETAIL"
     >
         <div

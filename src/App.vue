@@ -64,7 +64,9 @@ function onModeClicked() {
       </video>
     </transition>
 
-    <div v-if="false" class="absolute w-full h-full bg-[#ddd2bc]" />
+    <transition>
+      <div v-show="!store.state.darkMode" class="absolute w-full h-full bg-[#ddd2bc90]" />
+    </transition>
 
     <div class="absolute z-2 h-screen w-screen flex flex-col justify-around p-[25px]">
       <AppBar :onMenuClicked="onMenuClicked" :onModeClicked="onModeClicked" />
