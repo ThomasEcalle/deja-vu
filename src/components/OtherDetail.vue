@@ -17,7 +17,7 @@ const selectedOther = store.getters.getSelectedOther;
         <div class="h-full w-full flex justify-center items-center">
             <div class=" w-[55%]">
                 <h2 class="stroked text-[3vmax] font-lemonmilk">{{ selectedOther.title }}</h2>
-                <div class="text-[0.8vmax]" font-normal v-html="selectedOther.description"></div>
+                <div class="text-[0.9vmax]" font-normal v-html="selectedOther.description"></div>
             </div>
         </div>
     </div>

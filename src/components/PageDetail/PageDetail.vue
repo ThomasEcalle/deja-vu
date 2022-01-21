@@ -17,7 +17,7 @@ const page = store.getters.getSelectedPage;
     >
         <div
             id="detail-title"
-            class="flex flex-row font-lemonmilk justify-start items-center text-[6.3vmax] uppercase leading-[90px]"
+            class="flex flex-row font-lemonmilk justify-start items-center text-[5.5vmax] uppercase leading-[90px]"
         >
             <h3 class="stroked mr-[12px]">{{ page.detailTitleStroked }}</h3>
             <h3 class="mr-[12px]">{{ page.detailTitleNormal }}</h3>
@@ -28,11 +28,11 @@ const page = store.getters.getSelectedPage;
         </div>
         <h4
             id="detail-subtitle"
-            class="text-[1.5vmax] uppercase font-bold mt-[10px] mb-[3vmax]"
+            class="text-[1.5vmax] uppercase font-bold mb-[3vmax]"
         >{{ page.subTitle }}</h4>
         <p
             id="detail-description"
-            class="w-[60vw] min-vw-[500px] text-[0.9vmax] font-normal"
+            class="w-[60vw] min-vw-[500px] text-[1.1vmax] font-normal"
             v-html="page.description"
         ></p>
     </div>
