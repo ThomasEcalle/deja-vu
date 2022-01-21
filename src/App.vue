@@ -12,6 +12,7 @@ import { HOME, SET_CONTENT, OPEN_MENU, MENU, PAGE_DETAIL, FETCH_PAGES, CONTACT, 
 import PageDetail from './components/PageDetail/PageDetail.vue';
 import Contact from './components/Contact/Contact.vue';
 import About from './components/OtherDetail.vue';
+import Overlay from './components/Overlay.vue';
 
 const store = useStore();
 
@@ -34,11 +35,20 @@ function onModeClicked() {
         v-show="!store.state.darkMode"
         class="fixed w-full h-full object-cover"
         autoplay
-        muted
-        preload
         loop
+        muted
+        playsinline
+        data-wf-ignore="true"
+        data-object-fit="cover"
       >
-        <source src="./assets/1080.mp4" type="video/mp4" />
+        <source
+          src="https://uploads-ssl.webflow.com/61d4203fb8f798002809e06d/61d4203fb8f79869c409e080_beige_1080_adjusted-transcode.mp4"
+          data-wf-ignore="true"
+        />
+        <source
+          src="https://uploads-ssl.webflow.com/61d4203fb8f798002809e06d/61d4203fb8f79869c409e080_beige_1080_adjusted-transcode.webm"
+          data-wf-ignore="true"
+        />
       </video>
     </transition>
 
@@ -47,17 +57,24 @@ function onModeClicked() {
         v-show="store.state.darkMode"
         class="fixed w-full h-full object-cover"
         autoplay
-        preload
-        muted
         loop
+        muted
+        playsinline
+        data-wf-ignore="true"
+        data-object-fit="cover"
       >
-        <source src="./assets/dark.mp4" type="video/mp4" />
+        <source
+          src="https://uploads-ssl.webflow.com/61d4203fb8f798002809e06d/61d44573882ea09d0887d0b3_dark_1080_adjusted-transcode.mp4"
+          data-wf-ignore="true"
+        />
+        <source
+          src="https://uploads-ssl.webflow.com/61d4203fb8f798002809e06d/61d44573882ea09d0887d0b3_dark_1080_adjusted-transcode.webm"
+          data-wf-ignore="true"
+        />
       </video>
     </transition>
 
-    <transition>
-      <div v-show="!store.state.darkMode" class="absolute w-full h-full bg-[#ddd2bc90]" />
-    </transition>
+    <Overlay />
 
     <div class="absolute z-2 h-screen w-screen flex flex-col justify-around p-[25px]">
       <AppBar :onMenuClicked="onMenuClicked" :onModeClicked="onModeClicked" />
