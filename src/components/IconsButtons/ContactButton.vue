@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import { useStore } from "vuex";
-import { SET_CONTENT, CONTACT } from '../../../constants'
+import { SET_CONTENT, CONTACT } from '../../constants'
 
 const props = defineProps({
     onTap: Function,
@@ -50,7 +50,7 @@ var hovering = ref(false);
                         <transition
                             v-if="!store.state.darkMode"
                             name="fade"
-                            duration="100ms"
+                            duration="150ms"
                             mode="out-in"
                         >
                             <svg

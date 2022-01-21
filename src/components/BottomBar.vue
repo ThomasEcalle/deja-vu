@@ -1,6 +1,6 @@
 
 <script setup>
-import ContactButton from './IconsButtons/ContactButton/NormalButton.vue';
+import ContactButton from './IconsButtons/ContactButton.vue';
 </script>
 
 <template>
