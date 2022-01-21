@@ -8,9 +8,10 @@ import Home from './components/Home.vue';
 import Menu from './components/Menu/Menu.vue';
 import CustomTransitions from './components/CustomTransitions.vue';
 import { useStore } from "vuex";
-import { HOME, SET_CONTENT, OPEN_MENU, MENU, PAGE_DETAIL, FETCH_PAGES, CONTACT } from './constants'
+import { HOME, SET_CONTENT, OPEN_MENU, MENU, PAGE_DETAIL, FETCH_PAGES, CONTACT, PAGE_OTHER } from './constants'
 import PageDetail from './components/PageDetail/PageDetail.vue';
 import Contact from './components/Contact/Contact.vue';
+import About from './components/OtherDetail.vue';
 
 const store = useStore();
 
@@ -28,16 +29,6 @@ function onModeClicked() {
 
 <template>
   <div class="w-screen h-screen">
-    <!--<transition name="fade" mode="out-in">
-      <video v-show="!store.state.darkMode" class="absolute w-full h-full object-cover" autoplay muted loop>
-        <source src="./assets/beige_1080_adjusted.mov" type="video/mp4">
-      </video>
-    </transition>-->
-
-    <!--<transition name="fade" mode="out-in">
-      <div v-show="!store.state.darkMode" class="absolute w-full h-full bg-[#ddd2bc] opacity-50" />
-    </transition>-->
-
     <transition duration="2000ms">
       <video
         v-show="!store.state.darkMode"
@@ -76,6 +67,7 @@ function onModeClicked() {
           <Menu v-else-if="store.state.content === MENU" />
           <PageDetail v-else-if="store.state.content === PAGE_DETAIL" />
           <Contact v-else-if="store.state.content === CONTACT" />
+          <About v-else-if="store.state.content === PAGE_OTHER" />
         </CustomTransitions>
       </div>
 

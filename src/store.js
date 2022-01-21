@@ -1,6 +1,7 @@
 import Vuex from 'vuex'
 import { storeKey } from 'vuex/dist/vuex.cjs';
-import { MENU, HOME, SET_CONTENT, CLOSE_MENU, OPEN_MENU, TOGGLE_DARKMODE, OPEN_PAGE_DETAIL, PAGE_DETAIL, FETCH_PAGES } from './constants'
+import { MENU, HOME, SET_CONTENT, CLOSE_MENU, OPEN_MENU, TOGGLE_DARKMODE, OPEN_PAGE_DETAIL, PAGE_DETAIL, FETCH_PAGES, OPEN_OTHER_DETAIL, PAGE_OTHER } from './constants'
+import { Other } from './models/Other';
 import { Page } from './models/Page'
 
 export default new Vuex.Store({
@@ -10,7 +11,9 @@ export default new Vuex.Store({
         content: HOME,
         lastContent: HOME,
         selectedPage: null,
+        selectedOther: null,
         pages: [],
+        others: [],
     },
     mutations: {
         async [FETCH_PAGES](state) {
@@ -41,6 +44,30 @@ export default new Vuex.Store({
                     );
                 }
             }
+
+            const othersRes = await fetch('http://localhost:8055/items/Others', {
+                method: 'get',
+                headers: {
+                    'content-type': 'application/json'
+                }
+            });
+
+            if (!othersRes.ok) {
+                console.log(`Error retrieving others: ${res.statusText}`);
+            } else {
+                const json = await othersRes.json();
+
+                for (var i = 0; i < json.data.length; i++) {
+                    const item = json.data[i];
+                    state.others.push(
+                        new Other(
+                            item.id,
+                            item.Title,
+                            item.Description,
+                        )
+                    );
+                }
+            }
         },
         [SET_CONTENT](state, newValue) {
             state.lastContent = state.content;
@@ -60,6 +87,12 @@ export default new Vuex.Store({
             state.menuVisible = false;
             state.selectedPage = state.pages.find(page => page.id == pageDetailId);
             state.content = PAGE_DETAIL;
+        },
+        [OPEN_OTHER_DETAIL](state, otherDetailId) {
+            state.menuVisible = false;
+            state.selectedOther = state.others.find(element => element.id == otherDetailId);
+
+            state.content = PAGE_OTHER;
         },
         [TOGGLE_DARKMODE](state) {
             state.darkMode = !state.darkMode;
@@ -85,6 +118,12 @@ export default new Vuex.Store({
             });
 
             return result;
+        },
+        allOthers: (state) => {
+            return state.others;
+        },
+        getSelectedOther: (state) => {
+            return state.selectedOther;
         },
         getSelectedPage: (state) => {
             return state.selectedPage;

@@ -39,8 +39,4 @@ const page = store.getters.getSelectedPage;
 </template>
 
 <style scoped>
-.stroked {
-    -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
-    -webkit-text-stroke-width: 1px;
-}
 </style>

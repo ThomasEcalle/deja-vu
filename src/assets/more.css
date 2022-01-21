@@ -1,3 +1,8 @@
+.stroked {
+    -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+}
+
 .fade-enter-active, .fade-leave-active {
     transition: opacity 1s;
 }
