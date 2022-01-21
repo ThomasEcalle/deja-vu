@@ -3,6 +3,7 @@ import { CONTACT } from '../../constants';
 import TextField from './TextField.vue';
 import SelectField from './SelectField.vue';
 import TextArea from './TextArea.vue';
+import ContactSubmit from './ContactSubmit.vue';
 
 </script>
 
@@ -55,12 +56,15 @@ import TextArea from './TextArea.vue';
                     placeHolderText="Saisir votre téléphone"
                 />
                 <SelectField class="col-span-2" name="offers" labelText="Offres" />
-                <TextArea
-                    class="col-span-2"
-                    labelText="Message"
-                    name="message"
-                    placeHolderText="Décrire votre projet ici"
-                />
+
+                <div class="col-span-2 relative">
+                    <TextArea
+                        labelText="Message"
+                        name="message"
+                        placeHolderText="Décrire votre projet ici"
+                    />
+                    <ContactSubmit class="absolute bottom-[-3.5vmax] left-10" />
+                </div>
             </form>
         </div>
     </div>
