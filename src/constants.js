@@ -10,4 +10,4 @@ export const OPEN_MENU = "openMenu";
 export const TOGGLE_DARKMODE = "toggleDarkMode";
 export const OPEN_PAGE_DETAIL = "openPageDetail";
 export const OPEN_OTHER_DETAIL = "openOtherDetail";
-
+export const TOGGLE_SOUND = "toggleSound";

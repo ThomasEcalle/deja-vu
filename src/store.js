@@ -1,6 +1,5 @@
 import Vuex from 'vuex'
-import { storeKey } from 'vuex/dist/vuex.cjs';
-import { MENU, HOME, SET_CONTENT, CLOSE_MENU, OPEN_MENU, TOGGLE_DARKMODE, OPEN_PAGE_DETAIL, PAGE_DETAIL, FETCH_PAGES, OPEN_OTHER_DETAIL, PAGE_OTHER } from './constants'
+import { MENU, HOME, SET_CONTENT, CLOSE_MENU, OPEN_MENU, TOGGLE_DARKMODE, OPEN_PAGE_DETAIL, PAGE_DETAIL, FETCH_PAGES, OPEN_OTHER_DETAIL, PAGE_OTHER, TOGGLE_SOUND } from './constants'
 import { Other } from './models/Other';
 import { Page } from './models/Page'
 
@@ -8,6 +7,8 @@ export default new Vuex.Store({
     state: {
         menuVisible: false,
         darkMode: false,
+        soundOn: false,
+        audio: null,
         content: HOME,
         lastContent: HOME,
         selectedPage: null,
@@ -101,6 +102,19 @@ export default new Vuex.Store({
             } else {
                 document.documentElement.classList.remove('dark')
             }
+        },
+        [TOGGLE_SOUND](state) {
+
+            if (state.audio === undefined || state.audio === null) {
+                state.audio = new Audio('https://www.dropbox.com/s/7tr6hr6k6fplf8r/deja_vu.wav?raw=1');
+            }
+            if (state.soundOn) {
+                state.audio.pause();
+            } else {
+                
+                state.audio.play();
+            }
+            state.soundOn = !state.soundOn;
         },
     },
     getters: {
