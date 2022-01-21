@@ -8,6 +8,7 @@ function onClick() {
     store.commit(SET_CONTENT, HOME);
 }
 
+
 </script>
 
 <template>

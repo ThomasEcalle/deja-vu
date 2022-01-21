@@ -27,7 +27,7 @@ function onModeClicked() {
 </script>
 
 <template>
-  <div>
+  <div class="w-screen h-screen">
     <!--<transition name="fade" mode="out-in">
       <video v-show="!store.state.darkMode" class="absolute w-full h-full object-cover" autoplay muted loop>
         <source src="./assets/beige_1080_adjusted.mov" type="video/mp4">
@@ -38,7 +38,33 @@ function onModeClicked() {
       <div v-show="!store.state.darkMode" class="absolute w-full h-full bg-[#ddd2bc] opacity-50" />
     </transition>-->
 
-    <div class="absolute w-full h-full bg-[#ddd2bc]" />
+    <transition duration="2000ms">
+      <video
+        v-show="!store.state.darkMode"
+        class="fixed w-full h-full object-cover"
+        autoplay
+        muted
+        preload
+        loop
+      >
+        <source src="./assets/1080.mp4" type="video/mp4" />
+      </video>
+    </transition>
+
+    <transition duration="2000ms" name="fade">
+      <video
+        v-show="store.state.darkMode"
+        class="fixed w-full h-full object-cover"
+        autoplay
+        preload
+        muted
+        loop
+      >
+        <source src="./assets/dark.mp4" type="video/mp4" />
+      </video>
+    </transition>
+
+    <div v-if="false" class="absolute w-full h-full bg-[#ddd2bc]" />
 
     <div class="absolute z-2 h-screen w-screen flex flex-col justify-around p-[25px]">
       <AppBar :onMenuClicked="onMenuClicked" :onModeClicked="onModeClicked" />
