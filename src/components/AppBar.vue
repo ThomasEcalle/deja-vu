@@ -1,10 +1,8 @@
 
 <script setup>
-import { ref } from 'vue'
-import IconButton from './IconButton.vue';
 import MenuButton from './IconsButtons/MenuButton.vue'
 import SwitchMode from './IconsButtons/SwitchMode.vue';
-import Logo from './Logo.vue';
+import Logo from './IconsButtons/Logo.vue';
 
 defineProps({
   onMenuClicked: Function,
@@ -15,13 +13,12 @@ defineProps({
 </script>
 
 <template>
-    <div class="h-[90px] flex flex-row justify-between items-center">
-        <MenuButton v-bind:onTap="onMenuClicked" />
-        <Logo />
-        <SwitchMode v-bind:onTap="onModeClicked"/>
-    </div>
+  <div class="h-[90px] flex flex-row justify-between items-center">
+    <MenuButton v-bind:onTap="onMenuClicked" />
+    <Logo />
+    <SwitchMode v-bind:onTap="onModeClicked" />
+  </div>
 </template>
 
 <style scoped>
-
 </style>

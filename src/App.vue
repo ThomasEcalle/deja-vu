@@ -8,8 +8,9 @@ import Home from './components/Home.vue';
 import Menu from './components/Menu/Menu.vue';
 import CustomTransitions from './components/CustomTransitions.vue';
 import { useStore } from "vuex";
-import { HOME, SET_CONTENT, OPEN_MENU, MENU, PAGE_DETAIL, FETCH_PAGES } from './constants'
+import { HOME, SET_CONTENT, OPEN_MENU, MENU, PAGE_DETAIL, FETCH_PAGES, CONTACT } from './constants'
 import PageDetail from './components/PageDetail/PageDetail.vue';
+import Contact from './components/Contact/Contact.vue';
 
 const store = useStore();
 
@@ -46,6 +47,7 @@ function onModeClicked() {
           <Home v-if="store.state.content === HOME" />
           <Menu v-else-if="store.state.content === MENU" />
           <PageDetail v-else-if="store.state.content === PAGE_DETAIL" />
+          <Contact v-else-if="store.state.content === CONTACT" />
         </CustomTransitions>
       </div>
 

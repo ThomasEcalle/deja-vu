@@ -1,6 +1,6 @@
 <script setup>
 import { useStore } from "vuex";
-import { HOME, SET_CONTENT } from "../constants";
+import { HOME, SET_CONTENT } from "../../constants";
 
 const store = useStore();
 

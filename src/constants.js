@@ -1,6 +1,7 @@
 export const FETCH_PAGES = "fetchPages"
 export const MENU = "Menu";
 export const HOME = "Home";
+export const CONTACT = "Contact";
 export const PAGE_DETAIL = "pageDetail";
 export const SET_CONTENT = "setContent"
 export const CLOSE_MENU = "closeMenu"

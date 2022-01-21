@@ -1,10 +1,11 @@
 
 <script setup>
+import ContactButton from './IconsButtons/ContactButton.vue';
 </script>
 
 <template>
-    <div class="h-[90px]">
-        
+    <div class="flex flew-row justify-end">
+        <ContactButton />
     </div>
 </template>
 
