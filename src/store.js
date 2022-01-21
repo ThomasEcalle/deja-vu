@@ -18,6 +18,9 @@ export default new Vuex.Store({
     },
     mutations: {
         async [FETCH_PAGES](state) {
+            state.audio = new Audio('https://www.dropbox.com/s/7tr6hr6k6fplf8r/deja_vu.wav?raw=1');
+            state.audio.preload = "auto";
+            
             const res = await fetch('http://localhost:8055/items/Pages', {
                 method: 'get',
                 headers: {
