@@ -7,6 +7,7 @@ const props = defineProps({
     labelText: String,
     missing: Boolean,
     placeHolderText: String,
+    model: String,
 });
 
 const store = useStore();
@@ -20,12 +21,14 @@ const store = useStore();
             :type="type"
             :name="name"
             :id="name"
+            :value="model"
+            @input="$emit('update:model', $event.target.value)"
             :placeholder="placeHolderText"
             :class="{ dark: store.state.darkMode }"
             class="contact-input transition-colors duration-1000 text-current cursor-pointer block h-[2.8vmax] mt-[0.8vmax] shadow appearance-none border border-current rounded-md w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline bg-transparent"
         />
 
-        <p v-if="missing" class="text-red-500 text-xs italic">Please fill out this field.</p>
+        <p v-if="missing" class="text-red-500 text-[1vmax] mt-[3px] italic">Veuillez remplir ce champ.</p>
     </div>
 </template>
 

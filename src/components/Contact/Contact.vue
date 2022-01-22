@@ -1,9 +1,79 @@
 <script setup>
+import { ref } from 'vue';
+import emailjs from 'emailjs-com'
 import { CONTACT } from '../../constants';
 import TextField from './TextField.vue';
 import SelectField from './SelectField.vue';
 import TextArea from './TextArea.vue';
 import ContactSubmit from './ContactSubmit.vue';
+import { useStore } from 'vuex';
+
+const store = useStore();
+
+const offers = store.getters.allPages;
+
+var firstNameValue = ref('');
+var lastNameValue = ref('');
+var emailValue = ref('');
+var phoneValue = ref('');
+var phoneValue = ref('');
+var offersValue = ref(offers[0]);
+var messageValue = ref('');
+
+var missingFields = ref(false);
+
+const formRef = ref('ContactForm');
+
+function onSubmit() {
+    if (firstNameValue.value === '') {
+        missingFields.value = true;
+        return;
+    }
+
+    if (lastNameValue.value === '') {
+        missingFields.value = true;
+        return;
+    }
+
+    if (emailValue.value === '') {
+        missingFields.value = true;
+        return;
+    }
+
+    if (phoneValue.value === '') {
+        missingFields.value = true;
+        return;
+    }
+
+    if (offersValue.value === '') {
+        missingFields.value = true;
+        return;
+    }
+
+    console.log(`Everything is ok, ready to send email :) ${firstNameValue.value},${firstNameValue} `);
+
+    try {
+
+        emailjs.init('user_eYolQlTfjcywShfedfj94');
+
+        emailjs.sendForm('service_ncq7a4m', 'template_eo4wqbc', formRef.value).then(() => {
+
+            firstNameValue.value = '';
+            lastNameValue.value = '';
+            emailValue.value = '';
+            phoneValue.value = '';
+            phoneValue.value = '';
+            offersValue.value = offers[0];
+            messageValue.value = '';
+
+        }).catch(error => {
+            console.log(`Error: ${error}`);
+        })
+
+    } catch (error) {
+        console.log({ error })
+    }
+}
 
 </script>
 
@@ -19,16 +89,17 @@ import ContactSubmit from './ContactSubmit.vue';
         </div>
         <div class="h-full w-[55vw] capitalize font-normal">
             <form
-                class="w-[80%] h-full grid grid-cols-2 gap-[2vmax] py-[10px] placeholder-current place-content-center"
-                action="/"
-                method="post"
+                class="w-[90%] h-full grid grid-cols-2 gap-[2vmax] py-[10px] placeholder-current place-content-center"
+                ref="formRef"
             >
                 <TextField
                     class="basis-1/2"
                     type="text"
                     name="first_name"
                     labelText="Prénom"
-                    :missing="false"
+                    :missing="missingFields && firstNameValue === ''"
+                    v-model:model="firstNameValue"
+                    @update:modelValue="firstNameValue = $event"
                     placeHolderText="Saisir votre prénom"
                 />
                 <TextField
@@ -36,7 +107,8 @@ import ContactSubmit from './ContactSubmit.vue';
                     type="text"
                     name="last_name"
                     labelText="Nom"
-                    :missing="false"
+                    v-model:model="lastNameValue"
+                    :missing="missingFields && lastNameValue === ''"
                     placeHolderText="Saisir votre nom"
                 />
                 <TextField
@@ -44,26 +116,36 @@ import ContactSubmit from './ContactSubmit.vue';
                     type="email"
                     name="email"
                     labelText="Adresse email"
-                    :missing="false"
+                    v-model:model="emailValue"
+                    :missing="missingFields && emailValue === ''"
                     placeHolderText="Saisir votre email"
                 />
                 <TextField
                     class="basis-1/2"
                     type="phone"
-                    name="phone_number"
+                    name="phone"
                     labelText="N° de téléphone"
-                    :missing="false"
+                    v-model:model="phoneValue"
+                    :missing="missingFields && phoneValue === ''"
                     placeHolderText="Saisir votre téléphone"
                 />
-                <SelectField class="col-span-2" name="offers" labelText="Offres" />
+                <SelectField
+                    class="col-span-2"
+                    name="offer"
+                    labelText="Offres"
+                    :offers="offers"
+                    :missing="missingFields && offersValue === ''"
+                    v-model:model="offersValue"
+                />
 
                 <div class="col-span-2 relative">
                     <TextArea
                         labelText="Message"
                         name="message"
+                        v-model:model="messageValue"
                         placeHolderText="Décrire votre projet ici"
                     />
-                    <ContactSubmit class="absolute bottom-[-3.5vmax] left-10" />
+                    <ContactSubmit class="absolute bottom-[-3.5vmax] left-10" :onClick="onSubmit" />
                 </div>
             </form>
         </div>

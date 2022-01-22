@@ -6,6 +6,7 @@ const props = defineProps({
     labelText: String,
     missing: Boolean,
     placeHolderText: String,
+    model: String,
 });
 
 const store = useStore();
@@ -18,7 +19,10 @@ const store = useStore();
         <textarea
             class="contact-input transition-colors duration-1000 w-full h-[9vmax] block leading-tight mt-[0.8vmax] py-2 px-3 appearance-none bg-transparent border border-current rounded-md focus:outline-none resize-none"
             id="name"
+            :value="model"
+            @input="$emit('update:model', $event.target.value)"
             rows="3"
+            :name="name"
             :placeholder="placeHolderText"
             :class="{ dark: store.state.darkMode }"
         ></textarea>

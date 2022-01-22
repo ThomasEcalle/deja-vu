@@ -4,16 +4,13 @@ import { useStore } from 'vuex';
 
 const props = defineProps({
     name: String,
+    offers: Array,
     labelText: String,
     missing: Boolean,
     placeHolder: String,
 });
 
 const store = useStore();
-
-const options = store.getters.allPages;
-
-console.log(options);
 
 </script>
 
@@ -24,10 +21,11 @@ console.log(options);
             <select
                 class="contact-input transition-colors duration-1000 block w-full h-[2.8vmax] leading-tight mt-[0.8vmax] cursor-pointer appearance-none bg-transparent border border-current py-2 px-3 rounded-md focus:outline-none"
                 :class="{ dark: store.state.darkMode }"
-                name="name"
+                @input="$emit('update:model', $event.target.value)"
+                :name="name"
                 id="name"
             >
-                <option v-for="item in options" class="text-current" :value="item">{{ item }}</option>
+                <option v-for="item in offers" class="text-current" :value="item">{{ item }}</option>
             </select>
             <div
                 class="pointer-events-none absolute inset-y-0 right-3 flex items-center px-2 text-gray-700"

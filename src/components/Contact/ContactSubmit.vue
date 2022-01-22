@@ -2,7 +2,7 @@
 import { useStore } from 'vuex';
 
 const props = defineProps({
-
+    onClick: Function,
 });
 
 const store = useStore();
@@ -11,6 +11,7 @@ const store = useStore();
 
 <template>
     <div
+         @click="onClick"
         id="contact-submit"
         :class="{ dark: store.state.darkMode }"
         class="group w-[5vmax] h-[5vmax] border border-current cursor-pointer transition-colors duration-[800ms] hover:bg-black hover:border-white rounded-full flex justify-center items-center"
