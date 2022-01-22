@@ -21,6 +21,7 @@ var offersValue = ref(offers[0]);
 var messageValue = ref('');
 
 var missingFields = ref(false);
+var loading = ref(false);
 
 const formRef = ref('ContactForm');
 
@@ -50,13 +51,15 @@ function onSubmit() {
         return;
     }
 
-    console.log(`Everything is ok, ready to send email :) ${firstNameValue.value},${firstNameValue} `);
-
     try {
 
-        emailjs.init('user_eYolQlTfjcywShfedfj94');
+        loading.value = true;
+
+        emailjs.init(import.meta.env.VITE_EMAILJS_USER_ID);
 
         emailjs.sendForm('service_ncq7a4m', 'template_eo4wqbc', formRef.value).then(() => {
+
+            loading.value = false;
 
             firstNameValue.value = '';
             lastNameValue.value = '';
@@ -68,6 +71,7 @@ function onSubmit() {
 
         }).catch(error => {
             console.log(`Error: ${error}`);
+            loading.value = false;
         })
 
     } catch (error) {
@@ -145,7 +149,13 @@ function onSubmit() {
                         v-model:model="messageValue"
                         placeHolderText="Décrire votre projet ici"
                     />
-                    <ContactSubmit class="absolute bottom-[-3.5vmax] left-10" :onClick="onSubmit" />
+                    <transition>
+                        <ContactSubmit
+                            v-if="!loading"
+                            class="absolute bottom-[-3.5vmax] left-10"
+                            :onClick="onSubmit"
+                        />
+                    </transition>
                 </div>
             </form>
         </div>

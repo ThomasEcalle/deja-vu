@@ -22,7 +22,7 @@ export default function (element, done) {
     timeline.add({
         targets: '.letter',
         opacity: [0, 1],
-        delay: (el, i) => (GLOBAL_LETTERS_DELAY_DURATION / 3) * (i + 1)
+        delay: (el, i) => (GLOBAL_LETTERS_DELAY_DURATION / 2) * (i + 1)
     }).add({
         targets: contactInputs,
         opacity: [0, 1],
