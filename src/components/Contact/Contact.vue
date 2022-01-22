@@ -60,6 +60,7 @@ function onSubmit() {
         emailjs.sendForm('service_ncq7a4m', 'template_eo4wqbc', formRef.value).then(() => {
 
             loading.value = false;
+             missingFields.value = false;
 
             firstNameValue.value = '';
             lastNameValue.value = '';
