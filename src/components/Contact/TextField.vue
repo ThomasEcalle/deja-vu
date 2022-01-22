@@ -15,7 +15,7 @@ const store = useStore();
 </script>
 
 <template>
-    <div class="text-[1vmax] transition-colors duration-1000">
+    <div class="text-[2vh] transition-colors duration-1000">
         <label :for="name" class="font-semibold cursor-pointer contact-label">{{ labelText }}</label>
         <input
             :type="type"
@@ -24,11 +24,11 @@ const store = useStore();
             :value="model"
             @input="$emit('update:model', $event.target.value)"
             :placeholder="placeHolderText"
-            :class="{ dark: store.state.darkMode }"
-            class="contact-input transition-colors duration-1000 text-current cursor-pointer block h-[2.8vmax] mt-[0.8vmax] shadow appearance-none border border-current rounded-md w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline bg-transparent"
+            :class="{ dark: store.state.darkMode, missing: missing }"
+            class="contact-input transition-colors duration-1000 text-current cursor-pointer block h-[6vh] mt-[0.8vmax] shadow appearance-none border border-current rounded-md w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline bg-transparent"
         />
 
-        <p v-if="missing" class="text-red-500 text-[1vmax] mt-[3px] italic">Veuillez remplir ce champ.</p>
+        <p v-if="missing" class="text-red-500 text-[1.5vh] italic">Veuillez remplir ce champ.</p>
     </div>
 </template>
 
@@ -37,6 +37,11 @@ input {
     /*transition: all 1000ms;*/
     color: black;
 }
+
+input.missing {
+    border-color: red;
+}
+
 input::placeholder {
     transition-duration: 1000ms;
     transition-property: color;

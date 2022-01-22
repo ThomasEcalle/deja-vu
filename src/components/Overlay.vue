@@ -9,7 +9,7 @@ const store = useStore();
 </script>
 
 <template>
-    <transition name="fade">
+    <transition name="toto">
         <div
             v-if="!store.state.darkMode"
             class="overlay absolute w-full h-full"

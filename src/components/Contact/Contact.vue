@@ -91,9 +91,9 @@ function onSubmit() {
         >
             <h2 id="contact-title">Contactez-nous</h2>
         </div>
-        <div class="h-full w-[55vw] capitalize font-normal">
+        <div class="h-full w-[50vw] capitalize font-normal">
             <form
-                class="w-[90%] h-full grid grid-cols-2 gap-[2vmax] py-[10px] placeholder-current place-content-center"
+                class="w-[90%] h-full grid gap-x-[2vh] gap-y-[6vh] grid-cols-2 placeholder-current place-content-center"
                 ref="formRef"
             >
                 <TextField
