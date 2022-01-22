@@ -28,7 +28,7 @@ const store = useStore();
             class="contact-input transition-colors duration-1000 text-current cursor-pointer block h-[6vh] mt-[0.8vmax] shadow appearance-none border border-current rounded-md w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline bg-transparent"
         />
 
-        <p v-if="missing" class="text-red-500 text-[1.5vh] italic">Veuillez remplir ce champ.</p>
+        <p v-if="missing" class="contact-label text-red-500 text-[1.5vh] italic">Veuillez remplir ce champ.</p>
     </div>
 </template>
 

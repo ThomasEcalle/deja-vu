@@ -21,6 +21,9 @@ export default function (element, done) {
         targets: contactInputs,
         opacity: [1, 0],
     }, "-=1000").add({
+        targets: contactLabels,
+        opacity: [1, 0],
+    }, "-=1000").add({
         targets: '.letter',
         opacity: [1, 0],
         delay: (el, i) => (GLOBAL_LETTERS_DELAY_DURATION / 3) * (i + 1)
