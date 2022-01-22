@@ -3,6 +3,8 @@ import { MENU, HOME, SET_CONTENT, CLOSE_MENU, OPEN_MENU, TOGGLE_DARKMODE, OPEN_P
 import { Other } from './models/Other';
 import { Page } from './models/Page'
 
+const BASE_URL = "https://main-bvxea6i-wv47clkpjwwaq.fr-3.platformsh.site";
+
 export default new Vuex.Store({
     state: {
         menuVisible: false,
@@ -18,10 +20,10 @@ export default new Vuex.Store({
     },
     mutations: {
         async [FETCH_PAGES](state) {
-            state.audio = new Audio('http://localhost:8055/assets/25188c36-3ce6-42de-91a9-110778f383b2.wav');
+            state.audio = new Audio(`${BASE_URL}/assets/508bad8b-1e17-40e3-93a4-0dceffb28313.wav`);
             state.audio.preload = "auto";
 
-            const res = await fetch('http://localhost:8055/items/Pages', {
+            const res = await fetch(`${BASE_URL}/items/Pages`, {
                 method: 'get',
                 headers: {
                     'content-type': 'application/json'
@@ -49,7 +51,7 @@ export default new Vuex.Store({
                 }
             }
 
-            const othersRes = await fetch('http://localhost:8055/items/Others', {
+            const othersRes = await fetch(`${BASE_URL}/items/Others`, {
                 method: 'get',
                 headers: {
                     'content-type': 'application/json'
@@ -66,8 +68,8 @@ export default new Vuex.Store({
                     state.others.push(
                         new Other(
                             item.id,
-                            item.Title,
-                            item.Description,
+                            item.title,
+                            item.description,
                         )
                     );
                 }
@@ -114,7 +116,7 @@ export default new Vuex.Store({
             if (state.soundOn) {
                 state.audio.pause();
             } else {
-                
+
                 state.audio.play();
             }
             state.soundOn = !state.soundOn;
