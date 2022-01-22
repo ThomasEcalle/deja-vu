@@ -11,3 +11,6 @@ export const TOGGLE_DARKMODE = "toggleDarkMode";
 export const OPEN_PAGE_DETAIL = "openPageDetail";
 export const OPEN_OTHER_DETAIL = "openOtherDetail";
 export const TOGGLE_SOUND = "toggleSound";
+export const GLOBAL_ANIMATION_DURATION = 800;
+export const GLOBAL_LETTERS_DELAY_DURATION = 20;
+export const GLOBAL_ANIMATION_EASING = 'easeInOutCubic';

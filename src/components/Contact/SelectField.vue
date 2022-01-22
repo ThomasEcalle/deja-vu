@@ -19,10 +19,10 @@ console.log(options);
 
 <template>
     <div class="text-[1vmax] transition-colors duration-1000">
-        <label for="name" class="font-semibold cursor-pointer">{{ labelText }}</label>
+        <label for="name" class="font-semibold cursor-pointer contact-label">{{ labelText }}</label>
         <div class="relative">
             <select
-                class="transition-colors duration-1000 block w-full h-[2.8vmax] leading-tight mt-[0.8vmax] cursor-pointer appearance-none bg-transparent border border-current py-2 px-3 rounded-md focus:outline-none"
+                class="contact-input transition-colors duration-1000 block w-full h-[2.8vmax] leading-tight mt-[0.8vmax] cursor-pointer appearance-none bg-transparent border border-current py-2 px-3 rounded-md focus:outline-none"
                 :class="{ dark: store.state.darkMode }"
                 name="name"
                 id="name"

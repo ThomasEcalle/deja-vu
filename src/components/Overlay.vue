@@ -21,7 +21,7 @@ const store = useStore();
 <style scoped>
 .overlay {
     background-color: #ddd2bc80;
-    transition: background-color 600ms ease-in-out;
+    transition: background-color 800ms ease-in-out;
 }
 
 .overlay.menuOverlay {

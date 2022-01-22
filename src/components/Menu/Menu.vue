@@ -44,7 +44,7 @@ function onOtherClicked(itemId) {
             </div>
         </div>
         <div
-            class="w-[40px] h-[2px] my-[20px] border border-current dark:border-white transition-colors duration-1000"
+            class="separator w-[40px] h-[2px] my-[20px] border border-current dark:border-white transition-colors duration-1000"
         ></div>
         <ul>
             <li v-for="item in others">

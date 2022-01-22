@@ -15,7 +15,7 @@ import ContactSubmit from './ContactSubmit.vue';
         <div
             class="text-[3.5vmax] w-[45vw] h-full uppercase flex flex-row justify-center items-center font-lemonmilk transition-colors duration-1000"
         >
-            <h2>Contactez-nous</h2>
+            <h2 id="contact-title">Contactez-nous</h2>
         </div>
         <div class="h-full w-[55vw] capitalize font-normal">
             <form

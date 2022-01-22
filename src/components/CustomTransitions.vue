@@ -2,13 +2,17 @@
 <script setup>
 
 import { useStore } from "vuex";
+import contactEnterAnimation from "../animations/contactEnterAnimation";
+import contactLeaveAnimation from "../animations/contactLeaveAnimation";
 import defaultEnterAnimation from '../animations/defaultEnterAnimation';
 import defaultLeaveAnimation from '../animations/defaultLeaveAnimation';
 import detailEnterAnimation from "../animations/detailEnterAnimation";
 import detailLeaveAnimation from "../animations/detailLeaveAnimation";
 import menuEnterAnimation from "../animations/menuEnterAnimation";
 import menuLeaveAnimation from "../animations/menuLeaveAnimation";
-import { MENU, PAGE_DETAIL } from "../constants";
+import othersEnterAnimation from "../animations/othersEnterAnimation";
+import othersLeaveAnimation from "../animations/othersLeaveAnimation";
+import { MENU, PAGE_DETAIL, PAGE_OTHER, CONTACT } from "../constants";
 
 const store = useStore();
 
@@ -24,6 +28,12 @@ const enter = async function (el, done) {
       break;
     case MENU:
       menuEnterAnimation(el, done);
+      break;
+    case PAGE_OTHER:
+      othersEnterAnimation(el, done);
+      break;
+    case CONTACT:
+      contactEnterAnimation(el, done);
       break;
     default:
       defaultEnterAnimation(el, done);
@@ -51,6 +61,12 @@ const leave = async function (el, done) {
       break;
     case MENU:
       menuLeaveAnimation(el, done);
+      break;
+    case PAGE_OTHER:
+      othersLeaveAnimation(el, done);
+      break;
+    case CONTACT:
+      contactLeaveAnimation(el, done);
       break;
     default:
       defaultLeaveAnimation(el, done);

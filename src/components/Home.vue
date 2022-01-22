@@ -9,10 +9,10 @@ import { HOME } from '../constants';
         :id="HOME"
     >
         <h2
-            class="home-title text-center"
+            class="home-title text-center overflow-hidden"
         >Nous abolissons les frontières de l’espace</h2>
         <h2
-            class="home-title text-center"
+            class="home-title text-center overflow-hidden"
         >et du temps en créant des experiences immersives</h2>
     </div>
 </template>

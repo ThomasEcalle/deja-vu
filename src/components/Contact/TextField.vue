@@ -15,14 +15,14 @@ const store = useStore();
 
 <template>
     <div class="text-[1vmax] transition-colors duration-1000">
-        <label :for="name" class="font-semibold cursor-pointer">{{ labelText }}</label>
+        <label :for="name" class="font-semibold cursor-pointer contact-label">{{ labelText }}</label>
         <input
             :type="type"
             :name="name"
             :id="name"
             :placeholder="placeHolderText"
             :class="{ dark: store.state.darkMode }"
-            class="transition-colors duration-1000 text-current cursor-pointer block h-[2.8vmax] mt-[0.8vmax] shadow appearance-none border border-current rounded-md w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline bg-transparent"
+            class="contact-input transition-colors duration-1000 text-current cursor-pointer block h-[2.8vmax] mt-[0.8vmax] shadow appearance-none border border-current rounded-md w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline bg-transparent"
         />
 
         <p v-if="missing" class="text-red-500 text-xs italic">Please fill out this field.</p>

@@ -1,4 +1,5 @@
 import anime from 'animejs';
+import { GLOBAL_ANIMATION_DURATION, GLOBAL_ANIMATION_EASING } from '../constants';
 
 export default function (element, done) {
 
@@ -7,8 +8,8 @@ export default function (element, done) {
     const description = document.getElementById("detail-description");
 
     var timeline = anime.timeline({
-        easing: 'easeInOutCubic',
-        duration: 800,
+        easing: GLOBAL_ANIMATION_EASING,
+        duration: GLOBAL_ANIMATION_DURATION,
         complete: done,
     });
 
@@ -16,12 +17,12 @@ export default function (element, done) {
         .add({
             targets: title,
             opacity: [0, 1],
-            translateY: [30, 0],
+            translateY: [20, 0],
         })
         .add({
             targets: subtitle,
             opacity: [0, 1],
-            translateX: [30, 0],
+            translateX: [20, 0],
         }, '-=700').add({
             targets: description,
             opacity: [0, 1],
