@@ -14,7 +14,7 @@ const store = useStore();
         <SoundButton />
 
         <transition name="toto" duration="1200">
-            <ContactButton v-show="store.state.content != CONTACT" class="absolute right-[40px] bottom-[40px]" />
+            <ContactButton v-show="store.state.content != CONTACT" class="absolute bottom-[20px] right-[20px]" />
         </transition>
     </div>
 </template>

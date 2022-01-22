@@ -23,7 +23,7 @@ var hovering = ref(false);
         @mouseenter="hovering = true"
         @mouseleave="hovering = false"
         :style="'scale:2'"
-        class="font-lemonmilk text-[10.4px] bottom-[65px] right-[85px] cursor-pointer"
+        class="font-lemonmilk text-[10.4px] cursor-pointer"
     >
         <div :class="{ dark: store.state.darkMode }" class="rotative duration-1000">
             <svg id="circleSvg" viewBox="0 0 100 100" width="100%" height="100%">
