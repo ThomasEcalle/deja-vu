@@ -28,7 +28,7 @@ const page = store.getters.getSelectedPage;
         </div>
         <h4
             id="detail-subtitle"
-            class="text-[2.8vh] uppercase font-bold mb-[6vh]"
+            class="text-[2.8vh] uppercase font-bold mb-[4.5vh]"
         >{{ page.subTitle }}</h4>
         <p
             id="detail-description"
