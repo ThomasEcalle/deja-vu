@@ -15,7 +15,7 @@ const props = defineProps({
         >
             <svg
                 id="player-svg"
-                class="w-[2vmax] h-[2vmax] dark:fill-white"
+                class="w-[2vmax] h-[2vmax] dark:fill-white transition-colors duration-1000"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
             >
