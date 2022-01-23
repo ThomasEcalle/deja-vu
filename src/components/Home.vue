@@ -1,6 +1,9 @@
 
 <script setup>
 import { HOME } from '../constants';
+import { useI18n } from "vue3-i18n";
+const i18n = useI18n();
+
 </script>
 
 <template>
@@ -24,7 +27,7 @@ import { HOME } from '../constants';
     >
         <h2
             class="home-title text-center overflow-hidden"
-        >Nous abolissons les frontières de l’espace</h2>
+        >{{ $t("homeTitle1") }}</h2>
         <h2
             class="home-title text-center overflow-hidden"
         >et du temps en créant des experiences immersives</h2>

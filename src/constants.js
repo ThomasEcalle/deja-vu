@@ -16,3 +16,6 @@ export const GLOBAL_LETTERS_DELAY_DURATION = 20;
 export const GLOBAL_ANIMATION_EASING = 'easeInOutCubic';
 
 export const isSmallDevice = () => window.innerWidth <= 640;
+
+export const LOCALE_FR = "fr";
+export const LOCALE_EN = "en";
