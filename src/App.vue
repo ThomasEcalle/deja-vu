@@ -76,9 +76,9 @@ function onModeClicked() {
 
     <Overlay />
 
-    <div class="absolute z-2 h-[95%] sm:h-screen w-screen flex flex-col justify-around p-[14px] sm:p-[25px]">
+    <div class="absolute z-2 h-[98%] sm:h-screen w-screen flex flex-col justify-around p-[14px] sm:p-[25px]">
       <AppBar :onMenuClicked="onMenuClicked" :onModeClicked="onModeClicked" />
-      <div class="relative h-full w-full bg-rose-200">
+      <div class="relative h-full w-full">
         <CustomTransitions>
           <Home v-if="store.state.content === HOME" />
           <Menu v-else-if="store.state.content === MENU" />
