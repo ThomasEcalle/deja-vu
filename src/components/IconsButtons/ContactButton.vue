@@ -22,7 +22,6 @@ var hovering = ref(false);
         @click="onClick"
         @mouseenter="hovering = true"
         @mouseleave="hovering = false"
-        :style="'scale:2'"
         class="font-lemonmilk text-[10.4px] cursor-pointer"
     >
         <div :class="{ dark: store.state.darkMode }" class="rotative duration-1000">
