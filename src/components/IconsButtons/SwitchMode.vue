@@ -17,8 +17,8 @@ function onClick() {
     <div 
         @click="onClick" 
         class="
-        w-[40px]
-        h-[40px]
+        w-[45px]
+        h-[45px]
         sm:w-[60px]
         sm:h-[60px]
         rounded-full

@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import { useStore } from "vuex";
-import { HOME, SET_CONTENT } from "../../constants";
+import { HOME, SET_CONTENT, isSmallDevice } from "../../constants";
 
 const store = useStore();
 
@@ -11,15 +11,17 @@ function onClick() {
 
 var hovering = ref(false);
 
+const smallDevice = isSmallDevice();
+
 </script>
 
 <template>
     <div class="group">
         <svg
             :onClick="onClick"
-            @mouseenter="hovering = true"
+            @mouseenter="smallDevice ? hovering = false : hovering = true"
             @mouseleave="hovering = false"
-            class="cursor-pointer duration-1000 sm:hover:scale-[0.95] sm:group-hover:white sm:w-[256px] sm:h-[43px] w-[18vh] h-[6vh]"
+            class="cursor-pointer duration-1000 sm:hover:scale-[0.95] sm:group-hover:white sm:w-[256px] sm:h-[43px] w-[20vh] h-[8vh]"
             viewBox="0 0 256 43"
             xmlns="http://www.w3.org/2000/svg"
         >
@@ -63,8 +65,12 @@ var hovering = ref(false);
 </template>
 
 <style scoped>
+path.dark {
+    color: white;
+}
+
 @media (min-width: 700px) {
-    path.dark {
+    path.hoverDark {
         color: white;
     }
 }

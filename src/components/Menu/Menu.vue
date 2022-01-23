@@ -22,12 +22,12 @@ function onOtherClicked(itemId) {
 
 <template>
     <div
-        class="absolute h-full w-full dark:text-white text-black mt-[40px] pl-[39px] duration-1000"
+        class="absolute h-full w-full dark:text-white text-black mt-[20px] sm:mt-[40px] pl-[25px] sm:pl-[39px] duration-1000"
         :id="MENU"
     >
-        <div class="w-[500px] grid grid-cols-2">
+        <div class="w-[500px] grid sm:grid-cols-2 grid-cols-1 ">
             <div>
-                <h3 class="menu-category font-normal text-[15px] mb-[10px] leading-[34px]">Professionnels</h3>
+                <h3 class="menu-category font-normal text-[12px] sm:text-[15px] mb-[0px] sm:mb-[10px] leading-[34px]">Professionnels</h3>
                 <ul>
                     <li v-for="item in b2bPages">
                         <MenuItem :title="item.menuTitle" :onClick="() => onClick(item.id)" />
@@ -35,7 +35,7 @@ function onOtherClicked(itemId) {
                 </ul>
             </div>
             <div>
-                <h3 class="menu-category text-[15px] mb-[10px] leading-[34px]">Particuliers</h3>
+                <h3 class="menu-category text-[12px] sm:text-[15px] mb-[0px] sm:mb-[10px] leading-[34px] mt-[22px] sm:mt-0">Particuliers</h3>
                 <ul>
                     <li v-for="item in b2cPages">
                         <MenuItem :title="item.menuTitle" :onClick="() => onClick(item.id)" />
@@ -50,7 +50,7 @@ function onOtherClicked(itemId) {
             <li v-for="item in others">
                 <h4
                     :onClick="() => onOtherClicked(item.id)"
-                    class="menu-item font-montserrat font-bold cursor-pointer dark:hover:text-black hover:text-white hover:duration-700 leading-[34px] hover:ml-[5px] uppercase"
+                    class="menu-item font-montserrat font-bold cursor-pointer text-[12px] sm:text-[15px] dark:hover:text-black hover:text-white hover:duration-700 leading-[34px] hover:ml-[5px] uppercase"
                 >{{ item.title }}</h4>
             </li>
         </ul>
