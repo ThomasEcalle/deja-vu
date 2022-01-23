@@ -37,6 +37,8 @@ function onClick() {
         border-current
         dark:border-white
         overflow-hidden
+        active:bg-transparent/[.1]
+        active:scale-[0.9]
         sm:hover:bg-transparent/[.1]
         sm:hover:scale-[0.9]
         duration-1000

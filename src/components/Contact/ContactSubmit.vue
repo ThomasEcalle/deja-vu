@@ -14,10 +14,10 @@ const store = useStore();
         @click="onClick"
         id="contact-submit"
         :class="{ dark: store.state.darkMode }"
-        class="group z-10 w-[16vw] h-[16vw] sm:w-[5vmax] sm:h-[5vmax] border border-current cursor-pointer transition-colors duration-[800ms] sm:hover:bg-black sm:hover:border-white rounded-full flex justify-center items-center"
+        class="group z-10 w-[16vw] h-[16vw] sm:w-[5vmax] sm:h-[5vmax] border border-current cursor-pointer active:bg-transparent/[.9] transition-colors duration-[800ms] sm:hover:bg-black sm:hover:border-white rounded-full flex justify-center items-center"
     >
         <svg
-            class="sm:group-hover:fill-white sm:w-[2vw] sm:h-[2.2vw] w-[3vh] h-[3vh]"
+            class="group-active:fill-white sm:group-hover:fill-white sm:w-[2vw] sm:h-[2.2vw] w-[3vh] h-[3vh]"
             :class="{ dark: store.state.darkMode }"
             viewBox="0 0 33 25"
             xmlns="http://www.w3.org/2000/svg"
