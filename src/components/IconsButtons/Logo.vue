@@ -21,7 +21,7 @@ const smallDevice = isSmallDevice();
             :onClick="onClick"
             @mouseenter="smallDevice ? hovering = false : hovering = true"
             @mouseleave="hovering = false"
-            class="cursor-pointer duration-1000 sm:hover:scale-[0.95] sm:group-hover:white sm:w-[256px] sm:h-[43px] w-[20vh] h-[8vh]"
+            class="cursor-pointer duration-1000 sm:hover:scale-[0.95] sm:group-hover:white sm:w-[256px] sm:h-[43px] w-[45vw] h-[8vw]"
             viewBox="0 0 256 43"
             xmlns="http://www.w3.org/2000/svg"
         >

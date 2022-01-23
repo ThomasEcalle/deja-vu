@@ -88,7 +88,7 @@ function onSubmit() {
         :id="CONTACT"
     >
         <div
-            class="sm:text-[3.5vmax] text-[4vh] sm:w-[45vw] sm:h-full uppercase flex flex-row sm:justify-center items-center font-lemonmilk transition-colors duration-1000"
+            class="sm:text-[3.5vmax] text-[7vw] sm:w-[45vw] sm:h-full uppercase flex flex-row sm:justify-center items-center font-lemonmilk transition-colors duration-1000"
         >
             <h2 id="contact-title">Contactez-nous</h2>
         </div>
@@ -160,7 +160,7 @@ function onSubmit() {
                     <transition>
                         <ContactSubmit
                             v-if="!loading"
-                            class="absolute sm:bottom-[-3.5vmax] bottom-[-3vmax] left-[15px] sm:left-10"
+                            class="absolute sm:bottom-[-3.5vmax] bottom-[-6vw] left-[15px] sm:left-10"
                             :onClick="onSubmit"
                         />
                     </transition>
