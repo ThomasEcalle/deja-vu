@@ -30,7 +30,7 @@ const i18n = useI18n();
         >{{ $t("homeTitle1") }}</h2>
         <h2
             class="home-title text-center overflow-hidden"
-        >et du temps en créant des experiences immersives</h2>
+        >{{ $t("homeTitle2") }}</h2>
     </div>
 </template>
 

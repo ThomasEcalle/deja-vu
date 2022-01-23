@@ -27,7 +27,7 @@ function onOtherClicked(itemId) {
     >
         <div class="w-[500px] grid sm:grid-cols-2 grid-cols-1 ">
             <div>
-                <h3 class="menu-category font-normal text-[12px] sm:text-[15px] mb-[0px] sm:mb-[10px] leading-[34px]">Professionnels</h3>
+                <h3 class="menu-category font-normal text-[12px] sm:text-[15px] mb-[0px] sm:mb-[10px] leading-[34px]">{{ $t("b2bTitle") }}</h3>
                 <ul>
                     <li v-for="item in b2bPages">
                         <MenuItem :title="item.menuTitle" :onClick="() => onClick(item.id)" />
@@ -35,7 +35,7 @@ function onOtherClicked(itemId) {
                 </ul>
             </div>
             <div>
-                <h3 class="menu-category text-[12px] sm:text-[15px] mb-[0px] sm:mb-[10px] leading-[34px] mt-[22px] sm:mt-0">Particuliers</h3>
+                <h3 class="menu-category text-[12px] sm:text-[15px] mb-[0px] sm:mb-[10px] leading-[34px] mt-[22px] sm:mt-0">{{ $t("b2cTitle") }}</h3>
                 <ul>
                     <li v-for="item in b2cPages">
                         <MenuItem :title="item.menuTitle" :onClick="() => onClick(item.id)" />

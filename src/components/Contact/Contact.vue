@@ -7,6 +7,7 @@ import SelectField from './SelectField.vue';
 import TextArea from './TextArea.vue';
 import ContactSubmit from './ContactSubmit.vue';
 import { useStore } from 'vuex';
+import '../../i18n'
 
 const store = useStore();
 
@@ -24,6 +25,7 @@ var missingFields = ref(false);
 var loading = ref(false);
 
 const formRef = ref('ContactForm');
+
 
 function onSubmit() {
     if (firstNameValue.value === '') {
@@ -90,7 +92,7 @@ function onSubmit() {
         <div
             class="sm:text-[3.5vmax] text-[7vw] sm:w-[45vw] sm:h-full uppercase flex flex-row sm:justify-center items-center font-lemonmilk transition-colors duration-1000"
         >
-            <h2 id="contact-title">Contactez-nous</h2>
+            <h2 id="contact-title">{{ $t("contactFormTitle") }}</h2>
         </div>
         <div class="h-full sm:w-[50vw] capitalize font-normal sm:mt-0 mt-[20px] overflow-scroll sm:overflow-visible no-scrollbar">
             <form
@@ -108,43 +110,43 @@ function onSubmit() {
                     class="sm:basis-1/2 col-span-2 sm:col-span-1"
                     type="text"
                     name="first_name"
-                    labelText="Prénom"
+                    :labelText="$t('firstNameLabel')"
                     :missing="missingFields && firstNameValue === ''"
                     v-model:model="firstNameValue"
                     @update:modelValue="firstNameValue = $event"
-                    placeHolderText="Saisir votre prénom"
+                    :placeHolderText="$t('firstNamePlaceHolder')"
                 />
                 <TextField
                     class="sm:basis-1/2 col-span-2 sm:col-span-1"
                     type="text"
                     name="last_name"
-                    labelText="Nom"
+                    :labelText="$t('lastNameLabel')"
                     v-model:model="lastNameValue"
                     :missing="missingFields && lastNameValue === ''"
-                    placeHolderText="Saisir votre nom"
+                    :placeHolderText="$t('lastNamePlaceHolder')"
                 />
                 <TextField
                     class="sm:basis-1/2 col-span-2 sm:col-span-1"
                     type="email"
                     name="email"
-                    labelText="Adresse email"
+                    :labelText="$t('emailLabel')"
                     v-model:model="emailValue"
                     :missing="missingFields && emailValue === ''"
-                    placeHolderText="Saisir votre email"
+                    :placeHolderText="$t('emailPlaceHolder')"
                 />
                 <TextField
                     class="sm:basis-1/2 col-span-2 sm:col-span-1"
                     type="phone"
                     name="phone"
-                    labelText="N° de téléphone"
+                    :labelText="$t('phoneLabel')"
                     v-model:model="phoneValue"
                     :missing="missingFields && phoneValue === ''"
-                    placeHolderText="Saisir votre téléphone"
+                    :placeHolderText="$t('phonePlaceHolder')"
                 />
                 <SelectField
                     class="col-span-2"
                     name="offer"
-                    labelText="Offres"
+                    :labelText="$t('offersLabel')"
                     :offers="offers"
                     :missing="missingFields && offersValue === ''"
                     v-model:model="offersValue"
@@ -152,10 +154,10 @@ function onSubmit() {
 
                 <div class="col-span-2 relative">
                     <TextArea
-                        labelText="Message"
+                        :labelText="$t('messageLabel')"
                         name="message"
                         v-model:model="messageValue"
-                        placeHolderText="Décrire votre projet ici"
+                        :placeHolderText="$t('messagePlaceHolder')"
                     />
                     <transition>
                         <ContactSubmit

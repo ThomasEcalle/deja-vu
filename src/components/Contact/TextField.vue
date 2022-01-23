@@ -28,13 +28,12 @@ const store = useStore();
             class="contact-input transition-colors duration-1000 text-current cursor-pointer block sm:h-[6vh] h-[11vw] mt-[0.8vmax] shadow appearance-none border border-current rounded-md w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline bg-transparent"
         />
 
-        <p v-if="missing" class="contact-label text-red-500 text-[2.5vw] sm:text-[1.2vh] italic">Veuillez remplir ce champ.</p>
+        <p v-if="missing" class="contact-label text-red-500 text-[2.5vw] sm:text-[1.2vh] italic">{{ $t("errorPlaceHolder") }}</p>
     </div>
 </template>
 
 <style scoped>
 input {
-    /*transition: all 1000ms;*/
     color: black;
 }
 

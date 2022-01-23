@@ -9,8 +9,24 @@ function getNavigatorLang() {
 
 const messages = {
   en: {
-    homeTitle1: "My title in english",
-    homeTitle2: "My title in english",
+    homeTitle1: "We abolish the boundaries of space",
+    homeTitle2: "and time creating immersive experiences",
+    b2bTitle: "Professionals",
+    b2cTitle: "Individuals",
+    contactButton: "Contact-us&#160;&#160;-&#160;&#160;Contact-us&#160;&#160;-&#160;&#160;",
+    contactFormTitle: "Contact us",
+    firstNameLabel: "First name",
+    firstNamePlaceHolder: "Enter your first name",
+    lastNameLabel: "Last name",
+    lastNamePlaceHolder: "Enter your first last name",
+    emailLabel: "Email Address",
+    emailPlaceHolder: "Enter your email address",
+    phoneLabel: "Phone number",
+    phonePlaceHolder: "Enter your phone number",
+    offersLabel: "Offers",
+    messageLabel: "Message",
+    messagePlaceHolder: "Describe your project here",
+    errorPlaceHolder: "Please complete this field."
   },
   fr: {
     homeTitle1: "Nous abolissons les frontières de l'espace",
@@ -38,7 +54,7 @@ const navigatorLocale = getNavigatorLang();
 var localeToSet = "en";
 
 if (navigatorLocale.includes(LOCALE_FR)) {
-  localeToSet = "fr";
+  //localeToSet = "fr";
 }
 
 const i18n = createI18n({
