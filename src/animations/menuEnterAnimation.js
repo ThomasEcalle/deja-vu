@@ -20,6 +20,7 @@ export default function (element, done) {
             for (var i = 0; i < menuItem.length; i++) {
                 menuItem[i].style = null;
             }
+
             done();
         },
     });
