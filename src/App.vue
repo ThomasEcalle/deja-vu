@@ -26,12 +26,10 @@ function onModeClicked() {
   store.commit(SET_CONTENT, HOME);
 }
 
-window.scrollTo(0,1);
-
 </script>
 
 <template>
-  <div class="w-screen h-screen">
+  <div class=" :w-screen :h-screen">
     <transition duration="2000ms">
       <video
         v-show="!store.state.darkMode"
@@ -78,9 +76,9 @@ window.scrollTo(0,1);
 
     <Overlay />
 
-    <div class="absolute z-2 h-screen w-screen flex flex-col justify-around p-[14px] sm:p-[25px]">
+    <div class="absolute z-2 h-[95%] sm:h-screen w-screen flex flex-col justify-around p-[14px] sm:p-[25px]">
       <AppBar :onMenuClicked="onMenuClicked" :onModeClicked="onModeClicked" />
-      <div class="relative h-full w-full">
+      <div class="relative h-full w-full bg-rose-200">
         <CustomTransitions>
           <Home v-if="store.state.content === HOME" />
           <Menu v-else-if="store.state.content === MENU" />
