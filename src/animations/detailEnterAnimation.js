@@ -6,6 +6,8 @@ export default function (element, done) {
     const title = document.getElementById("detail-title");
     const subtitle = document.getElementById("detail-subtitle");
     const description = document.getElementById("detail-description");
+    const playerContainer = document.getElementById("player-container");
+    const playerSvg = document.getElementById("player-svg");
 
     var timeline = anime.timeline({
         easing: GLOBAL_ANIMATION_EASING,
@@ -23,10 +25,20 @@ export default function (element, done) {
             targets: subtitle,
             opacity: [0, 1],
             translateX: [20, 0],
-        }, '-=700').add({
+        }, '-=700')
+        .add({
+            targets: playerContainer,
+            opacity: [0, 1],
+        }, '-=600')
+        .add({
+            targets: playerSvg,
+            opacity: [0, 1],
+            translateX: [-20, 0],
+        }, '-=600')
+        .add({
             targets: description,
             opacity: [0, 1],
-        }, '-=500');
+        }, '-=1000');
 
     timeline.play();
 }
