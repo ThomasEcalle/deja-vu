@@ -12,12 +12,12 @@ const page = store.getters.getSelectedPage;
 
 <template>
     <div
-        class="absolute h-full w-full dark:text-white text-black pt-[8vh] pl-[6vw] transition-colors duration-1000"
+        class="no-scrollbar absolute h-[90%] sm:h-full w-[95%] sm:w-full overflow-scroll dark:text-white text-black pt-[4vh] sm:pt-[8vh] sm:pl-[6vw] transition-colors duration-1000"
         :id="PAGE_DETAIL"
     >
         <div
             id="detail-title"
-            class="flex flex-row font-lemonmilk justify-start items-center text-[9vh] uppercase leading-[90px]"
+            class="flex flex-row flex-wrap font-lemonmilk justify-start items-center text-[7.71vw] sm:text-[9vh] uppercase leading-[41px] sm:leading-[90px]"
         >
             <h3 class="stroked mr-[12px]">{{ page.detailTitleStroked }}</h3>
             <h3 class="mr-[30px]">{{ page.detailTitleNormal }}</h3>
@@ -28,15 +28,25 @@ const page = store.getters.getSelectedPage;
         </div>
         <h4
             id="detail-subtitle"
-            class="text-[2.8vh] uppercase font-bold mb-[4.5vh]"
+            class="text-[4vw] sm:text-[2.8vh] uppercase font-bold mb-[30px] sm:mb-[4.5vh] mt-[10px] sm:mt-0"
         >{{ page.subTitle }}</h4>
         <p
             id="detail-description"
-            class="w-[60vw] min-vw-[500px] text-[2vh] font-normal"
+            class="w-full sm:w-[60vw] sm:min-vw-[500px] text-[4vw] sm:text-[2vh] font-normal text-justify"
             v-html="page.description"
         ></p>
     </div>
 </template>
 
 <style scoped>
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
 </style>
