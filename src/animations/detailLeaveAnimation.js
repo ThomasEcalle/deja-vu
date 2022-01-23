@@ -23,17 +23,17 @@ export default function (element, done) {
         .add({
             targets: playerSvg,
             opacity: [1, 0],
-            translateX: [0, 20],
+            translateX: [0, 10],
         }, '-=600')
         .add({
             targets: title,
             opacity: [1, 0],
-            translateY: [0, -20],
+            translateY: [0, -10],
         }, "-=700")
         .add({
             targets: subtitle,
             opacity: [1, 0],
-            translateX: [0, -20],
+            translateX: [0, -10],
         }, '-=700').add({
             targets: description,
             opacity: [1, 0],

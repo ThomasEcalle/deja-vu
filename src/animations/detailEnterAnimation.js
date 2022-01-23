@@ -19,12 +19,12 @@ export default function (element, done) {
         .add({
             targets: title,
             opacity: [0, 1],
-            translateY: [20, 0],
+            translateY: [10, 0],
         })
         .add({
             targets: subtitle,
             opacity: [0, 1],
-            translateX: [20, 0],
+            translateX: [10, 0],
         }, '-=700')
         .add({
             targets: playerContainer,
