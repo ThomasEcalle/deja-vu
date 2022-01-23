@@ -19,10 +19,10 @@ export default function (element, done) {
         },
     });
 
-    timeline.
-        add({
-            targets: targets,
-            translateY: [20, 0],
+    timeline
+        .add({
+            targets: '.home-title',
+            translateY: [30, 0],
             delay: (el, i) => 100
         })
         .add({
