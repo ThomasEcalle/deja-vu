@@ -12,6 +12,9 @@ export default function (element, done) {
             for (var i = 0; i < menuItem.length; i++) {
                 menuItem[i].style = null;
             }
+            for (var i = 0; i < menuCategory.length; i++) {
+                menuCategory[i].style = null;
+            }
             done();
         },
     });

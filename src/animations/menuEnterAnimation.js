@@ -21,6 +21,10 @@ export default function (element, done) {
                 menuItem[i].style = null;
             }
 
+            for (var i = 0; i < menuCategory.length; i++) {
+                menuCategory[i].style = null;
+            }
+
             done();
         },
     });
