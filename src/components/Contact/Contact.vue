@@ -60,7 +60,7 @@ function onSubmit() {
         emailjs.sendForm('service_ncq7a4m', 'template_eo4wqbc', formRef.value).then(() => {
 
             loading.value = false;
-             missingFields.value = false;
+            missingFields.value = false;
 
             firstNameValue.value = '';
             lastNameValue.value = '';
@@ -84,21 +84,28 @@ function onSubmit() {
 
 <template>
     <div
-        class="absolute h-full w-full leading-[1.5em] dark:text-white text-black flex flex-row items-center wrap"
+        class="absolute h-full w-full leading-[1.5em] dark:text-white text-black flex flex-col sm:flex-row sm:items-center wrap pt-[2vh] sm:pt-0"
         :id="CONTACT"
     >
         <div
-            class="text-[3.5vmax] w-[45vw] h-full uppercase flex flex-row justify-center items-center font-lemonmilk transition-colors duration-1000"
+            class="sm:text-[3.5vmax] text-[4vh] sm:w-[45vw] sm:h-full uppercase flex flex-row sm:justify-center items-center font-lemonmilk transition-colors duration-1000"
         >
             <h2 id="contact-title">Contactez-nous</h2>
         </div>
-        <div class="h-full w-[50vw] capitalize font-normal">
+        <div class="h-full sm:w-[50vw] capitalize font-normal sm:mt-0 mt-[20px] overflow-scroll sm:overflow-visible no-scrollbar">
             <form
-                class="w-[90%] h-full grid gap-x-[2vh] gap-y-[4vh] grid-cols-2 placeholder-current place-content-center"
+                class="
+                w-[90%] 
+                sm:h-full
+                h-[95%] 
+                grid sm:grid-cols-2 sm:gap-x-[2vh] gap-y-0 sm:gap-y-[4vh] 
+                placeholder-current 
+                sm:place-content-center
+                "
                 ref="formRef"
             >
                 <TextField
-                    class="basis-1/2"
+                    class="sm:basis-1/2 col-span-2 sm:col-span-1"
                     type="text"
                     name="first_name"
                     labelText="Prénom"
@@ -108,7 +115,7 @@ function onSubmit() {
                     placeHolderText="Saisir votre prénom"
                 />
                 <TextField
-                    class="basis-1/2"
+                    class="sm:basis-1/2 col-span-2 sm:col-span-1"
                     type="text"
                     name="last_name"
                     labelText="Nom"
@@ -117,7 +124,7 @@ function onSubmit() {
                     placeHolderText="Saisir votre nom"
                 />
                 <TextField
-                    class="basis-1/2"
+                    class="sm:basis-1/2 col-span-2 sm:col-span-1"
                     type="email"
                     name="email"
                     labelText="Adresse email"
@@ -126,7 +133,7 @@ function onSubmit() {
                     placeHolderText="Saisir votre email"
                 />
                 <TextField
-                    class="basis-1/2"
+                    class="sm:basis-1/2 col-span-2 sm:col-span-1"
                     type="phone"
                     name="phone"
                     labelText="N° de téléphone"
@@ -153,7 +160,7 @@ function onSubmit() {
                     <transition>
                         <ContactSubmit
                             v-if="!loading"
-                            class="absolute bottom-[-3.5vmax] left-10"
+                            class="absolute sm:bottom-[-3.5vmax] bottom-[-3vmax] left-[15px] sm:left-10"
                             :onClick="onSubmit"
                         />
                     </transition>
