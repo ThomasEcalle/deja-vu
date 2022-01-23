@@ -19,9 +19,7 @@ var hovering = ref(false);
             :onClick="onClick"
             @mouseenter="hovering = true"
             @mouseleave="hovering = false"
-            class="cursor-pointer duration-1000 hover:scale-[0.95] group-hover:white"
-            width="256"
-            height="43"
+            class="cursor-pointer duration-1000 sm:hover:scale-[0.95] sm:group-hover:white sm:w-[256px] sm:h-[43px] w-[18vh] h-[6vh]"
             viewBox="0 0 256 43"
             xmlns="http://www.w3.org/2000/svg"
         >
@@ -65,9 +63,12 @@ var hovering = ref(false);
 </template>
 
 <style scoped>
-path.dark {
-    color: white;
+@media (min-width: 700px) {
+    path.dark {
+        color: white;
+    }
 }
+
 .path {
     color: black;
     stroke-dasharray: 1000;

@@ -15,15 +15,31 @@ function onClick() {
 <template>
     <div
         @click="onClick"
-        class="w-[60px] h-[60px] rounded-full flex flex-col justify-center items-center cursor-pointer border-solid border-[1px] border-current dark:border-white hover:bg-transparent/[.1] hover:scale-[0.9] duration-500"
+        class="
+        w-[40px]
+        h-[40px]
+        sm:w-[60px]
+        sm:h-[60px]
+        rounded-full 
+        flex 
+        flex-col 
+        justify-center 
+        items-center 
+        cursor-pointer 
+        border-solid 
+        border-[1px] 
+        border-current 
+        dark:border-white 
+        overflow-hidden
+        sm:hover:bg-transparent/[.1]
+        sm:hover:scale-[0.9]
+        duration-500"
     >
         <transition name="icons" mode="out-in">
             <svg
                 v-if="store.state.soundOn"
-                width="23"
-                height="19"
                 viewBox="0 0 23 19"
-                class="fill-current dark:fill-white"
+                class="fill-current dark:fill-white sm:w-[23px] sm:h-[19px] w-[18px] h-[14px]"
                 xmlns="http://www.w3.org/2000/svg"
             >
                 <path
@@ -35,10 +51,9 @@ function onClick() {
 
             <svg
                 v-else
-                width="21"
-                height="15"
+            
                 viewBox="0 0 21 15"
-                class="fill-current dark:fill-white"
+                class="fill-current dark:fill-white sm:w-[21px] sm:h-[15px] w-[18px] h-[14px]"
                 xmlns="http://www.w3.org/2000/svg"
             >
                 <path

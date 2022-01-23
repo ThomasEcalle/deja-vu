@@ -22,8 +22,10 @@ function onClick() {
     <div 
         @click="onClick" 
         class="
-        w-[60px]
-        h-[60px] 
+        w-[40px]
+        h-[40px]
+        sm:w-[60px]
+        sm:h-[60px]
         rounded-full
         flex 
         flex-col 
@@ -34,14 +36,15 @@ function onClick() {
         border-[1px] 
         border-current
         dark:border-white
-        hover:bg-transparent/[.1]
-        hover:scale-[0.9]
+        overflow-hidden
+        sm:hover:bg-transparent/[.1]
+        sm:hover:scale-[0.9]
         duration-1000
         ">
             <transition name="icons" mode="out-in">
                 <svg 
                 v-if="!store.state.menuVisible" 
-                class="w-[26px] h-[15px] fill-current dark:fill-white transition-colors" 
+                class="w-[23] h-[12px] sm:w-[26px] sm:h-[15px] fill-current dark:fill-white transition-colors" 
                 viewBox="0 0 26 17" 
                 xmlns="http://www.w3.org/2000/svg">
                 <path  fill-rule="nonzero" d="M.875 3.656h16.25c.345 0 .625-.28.625-.625V1.47a.625.625 0 0 0-.625-.625H.875a.625.625 0 0 0-.625.625V3.03c0 .345.28.625.625.625zm.268 6.25h23.214c.493 0 .893-.28.893-.625V7.72c0-.345-.4-.625-.893-.625H1.143c-.493 0-.893.28-.893.625V9.28c0 .345.4.625.893.625zm-.268 6.25h16.25c.345 0 .625-.28.625-.625V13.97a.625.625 0 0 0-.625-.625H.875a.625.625 0 0 0-.625.625v1.562c0 .345.28.625.625.625z" />
