@@ -11,13 +11,13 @@ const selectedOther = store.getters.getSelectedOther;
 
 <template>
     <div
-        class="absolute h-full w-full pl-20 flex flex-col items-center justify-center dark:text-white text-black font-normal transition-colors duration-1000"
+        class="absolute h-full w-full sm:pt-0 pt-[30px] pl-[15px] sm:pl-20 flex flex-col items-center sm:justify-center dark:text-white text-black font-normal transition-colors duration-1000"
         :id="PAGE_OTHER"
     >
-        <div class="h-full w-full flex items-center">
-            <div class=" w-[70%]">
+        <div class="sm:h-full h-[95%] w-full">
+            <div class="h-[90%] sm:h-full w-[95%] sm:w-[70%] overflow-scroll sm:overflow-none no-scrollbar sm:flex sm:flex-col sm:justify-center">
                 <h2 id="other-detail-title" class="stroked text-[5.5vh] font-lemonmilk">{{ selectedOther.title }}</h2>
-                <div id="other-detail-description" class="text-[1.85vh] text-justify" font-normal v-html="selectedOther.description"></div>
+                <div id="other-detail-description" class="text-[4vw] sm:text-[1.8vh] font-normal text-justify sm:mt-0 mt-[10px]" font-normal v-html="selectedOther.description"></div>
             </div>
         </div>
     </div>
