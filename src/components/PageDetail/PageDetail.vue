@@ -12,7 +12,7 @@ const page = store.getters.getSelectedPage;
 
 <template>
     <div
-        class="no-scrollbar absolute h-[90%] sm:h-full w-[95%] sm:w-full overflow-scroll sm:overflow-visible dark:text-white text-black pt-[4vh] sm:pt-[8vh] sm:pl-[6vw] transition-colors duration-1000"
+        class="no-scrollbar absolute h-[85.5%] sm:h-full w-[95%] sm:w-full overflow-scroll sm:overflow-visible dark:text-white text-black pt-[4vh] sm:pt-[8vh] sm:pl-[6vw] transition-colors duration-1000"
         :id="PAGE_DETAIL"
     >
         <div
