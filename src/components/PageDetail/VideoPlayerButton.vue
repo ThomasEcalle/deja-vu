@@ -9,12 +9,11 @@ const props = defineProps({
 
 <template>
     <div
-        class="w-[4vmax] h-[4vmax] cursor-pointer rounded-full border-[1px] border-solid border-[1px] border-current dark:border-white hover:bg-transparent/[.1] duration-500 flex flex-col justify-center items-center"
+        class="w-[9vh] h-[9vh] pl-1 cursor-pointer rounded-full border-[1px] border-solid border-current dark:border-white hover:bg-transparent/[.1] transition-colors duration-500 flex justify-center items-center"
     >
         <svg
-            class="fill-current stroke-current"
-            width="19"
-            height="20"
+            class="group-hover:fill-white w-[2vmax] h-[2vmax]"
+            viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
         >
             <path

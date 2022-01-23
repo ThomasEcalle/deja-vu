@@ -17,10 +17,10 @@ const page = store.getters.getSelectedPage;
     >
         <div
             id="detail-title"
-            class="flex flex-row font-lemonmilk justify-start items-center text-[10vh] uppercase leading-[90px]"
+            class="flex flex-row font-lemonmilk justify-start items-center text-[9vh] uppercase leading-[90px]"
         >
             <h3 class="stroked mr-[12px]">{{ page.detailTitleStroked }}</h3>
-            <h3 class="mr-[12px]">{{ page.detailTitleNormal }}</h3>
+            <h3 class="mr-[30px]">{{ page.detailTitleNormal }}</h3>
             <VideoPlayerButton
                 v-if="page.videoLink != undefined && page.videoLink != null"
                 :videoLink="page.videoLink"
@@ -28,7 +28,7 @@ const page = store.getters.getSelectedPage;
         </div>
         <h4
             id="detail-subtitle"
-            class="text-[3vh] uppercase font-bold mb-[3vmax]"
+            class="text-[2.8vh] uppercase font-bold mb-[6vh]"
         >{{ page.subTitle }}</h4>
         <p
             id="detail-description"
