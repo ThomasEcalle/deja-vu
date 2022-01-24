@@ -39,9 +39,13 @@ export default new Vuex.Store({
                 for (var i = 0; i < json.data.length; i++) {
 
                     const retrievedTranslations = json.data[i]['translations'];
+                    var enTranslations = undefined;
+                    var frTranslations = undefined;
 
-                    const enTranslations = retrievedTranslations.filter(translation => translation["languages_id"].includes("en"));
-                    const frTranslations = retrievedTranslations.filter(translation => translation["languages_id"].includes("fr"));
+                    if (retrievedTranslations != undefined) {
+                        enTranslations = retrievedTranslations.filter(translation => translation["languages_id"].includes("en"));
+                        frTranslations = retrievedTranslations.filter(translation => translation["languages_id"].includes("fr"));
+                    }
 
                     const item = json.data[i];
 
@@ -78,9 +82,15 @@ export default new Vuex.Store({
 
                 for (var i = 0; i < json.data.length; i++) {
                     const item = json.data[i];
+
                     const retrievedTranslations = json.data[i]['translations'];
-                    const enTranslations = retrievedTranslations.filter(translation => translation["languages_code"].includes("en"));
-                    const frTranslations = retrievedTranslations.filter(translation => translation["languages_code"].includes("fr"));
+                    var enTranslations = undefined;
+                    var frTranslations = undefined;
+
+                    if (retrievedTranslations != undefined) {
+                        enTranslations = retrievedTranslations.filter(translation => translation["languages_code"].includes("en"));
+                        frTranslations = retrievedTranslations.filter(translation => translation["languages_code"].includes("fr"));
+                    }
 
 
                     state.others.push(
