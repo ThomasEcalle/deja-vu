@@ -60,8 +60,8 @@ export default new Vuex.Store({
                             item.b2c,
                             item.videoLink,
                             {
-                                "en-US": enTranslations[0],
-                                "fr-FR": frTranslations[0],
+                                "en-US": enTranslations != undefined ? enTranslations[0] : undefined,
+                                "fr-FR": frTranslations != undefined ? frTranslations[0] : undefined,
                             }
                         )
                     );
@@ -99,8 +99,8 @@ export default new Vuex.Store({
                             item.title,
                             item.description,
                             {
-                                "en-US": enTranslations[0],
-                                "fr-FR": frTranslations[0],
+                                "en-US": enTranslations != undefined ? enTranslations[0] : undefined,
+                                "fr-FR": frTranslations != undefined ? frTranslations[0] : undefined,
                             }
                         )
                     );
