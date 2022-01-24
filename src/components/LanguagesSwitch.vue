@@ -25,13 +25,13 @@ function onEnglishClicked() {
         <div
             @click="onFrenchClicked"
             :class="currentLocale.includes('fr') ? 'font-bold' : 'font-normal'"
-            class="cursor-pointer font-lemonmilk hover:text-white dark:text-white hover:dark:text-black"
+            class="cursor-pointer font-lemonmilk active:text-white sm:hover:text-white dark:text-white hover:dark:text-black"
         >FR</div>
         <div class="w-[1px] h-[15px] bg-black mx-2 dark:bg-white"></div>
         <div
             @click="onEnglishClicked"
             :class="currentLocale.includes('en') ? 'font-bold' : 'font-normal'"
-            class="cursor-pointer font-lemonmilk hover:text-white dark:text-white hover:dark:text-black"
+            class="cursor-pointer font-lemonmilk active:text-white sm:hover:text-white dark:text-white hover:dark:text-black"
         >EN</div>
     </div>
 </template>
