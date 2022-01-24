@@ -62,7 +62,7 @@ function onOtherClicked(itemId) {
                 <h4
                     :onClick="() => onOtherClicked(item.id)"
                     class="menu-item font-montserrat font-bold cursor-pointer text-[12px] sm:text-[15px] dark:hover:text-black hover:text-white hover:duration-700 leading-[34px] hover:ml-[5px] uppercase"
-                >{{ item.title }}</h4>
+                >{{ item.getTitle(i18n.getLocale()) }}</h4>
             </li>
         </ul>
     </div>

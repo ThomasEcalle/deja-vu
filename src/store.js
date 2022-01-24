@@ -64,7 +64,7 @@ export default new Vuex.Store({
                 }
             }
 
-            const othersRes = await fetch(`${BASE_URL}/items/Others`, {
+            const othersRes = await fetch(`${BASE_URL}/items/Others?fields=*.*`, {
                 method: 'get',
                 headers: {
                     'content-type': 'application/json'
@@ -78,11 +78,20 @@ export default new Vuex.Store({
 
                 for (var i = 0; i < json.data.length; i++) {
                     const item = json.data[i];
+                    const retrievedTranslations = json.data[i]['translations'];
+                    const enTranslations = retrievedTranslations.filter(translation => translation["languages_code"].includes("en"));
+                    const frTranslations = retrievedTranslations.filter(translation => translation["languages_code"].includes("fr"));
+
+
                     state.others.push(
                         new Other(
                             item.id,
                             item.title,
                             item.description,
+                            {
+                                "en-US": enTranslations[0],
+                                "fr-FR": frTranslations[0],
+                            }
                         )
                     );
                 }
