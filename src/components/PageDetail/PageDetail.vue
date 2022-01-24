@@ -33,7 +33,7 @@ const page = store.getters.getSelectedPage;
         >{{ page.getSubTitle(i18n.getLocale()) }}</h4>
         <p
             id="detail-description"
-            class="w-full sm:w-[60vw] sm:min-vw-[500px] text-[4vw] sm:text-[2vh] font-normal text-justify"
+            class="w-full sm:w-[50%] sm:min-vw-[500px] text-[4vw] sm:text-[2vh] font-normal text-justify"
             v-html="page.getDescription(i18n.getLocale())"
         ></p>
     </div>
