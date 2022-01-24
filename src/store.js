@@ -3,7 +3,7 @@ import { MENU, HOME, SET_CONTENT, CLOSE_MENU, OPEN_MENU, TOGGLE_DARKMODE, OPEN_P
 import { Other } from './models/Other';
 import { Page } from './models/Page'
 
-const BASE_URL = "http://localhost:8055" //"https://main-bvxea6i-wv47clkpjwwaq.fr-3.platformsh.site";
+const BASE_URL = "https://main-bvxea6i-wv47clkpjwwaq.fr-3.platformsh.site";
 
 export default new Vuex.Store({
     state: {
