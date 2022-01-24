@@ -4,6 +4,7 @@ import ContactButton from './IconsButtons/ContactButton.vue';
 import SoundButton from './IconsButtons/SoundButton.vue';
 import { useStore } from 'vuex';
 import { CONTACT } from '../constants';
+import LanguagesSwitch from './LanguagesSwitch.vue';
 
 const store = useStore();
 
@@ -11,7 +12,12 @@ const store = useStore();
 
 <template>
     <div class="flex flew-row justify-between items-center relative">
-        <SoundButton />
+
+        <div class="flex items-center">
+            <SoundButton class="sm:mr-10 mr-5"/>
+            <LanguagesSwitch />
+        </div>
+        
 
         <transition name="toto" duration="1200">
             <ContactButton v-show="store.state.content != CONTACT" 

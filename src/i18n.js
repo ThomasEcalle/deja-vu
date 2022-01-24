@@ -2,8 +2,13 @@ import { createI18n } from "vue3-i18n";
 import { LOCALE_FR } from "./constants";
 
 function getNavigatorLang() {
-  if (navigator.languages != undefined)
+  if (localStorage.selectedLocale != undefined) {
+    return localStorage.selectedLocale;
+  }
+  if (navigator.languages != undefined) {
     return navigator.languages[0];
+  }
+
   return navigator.language;
 }
 
@@ -54,7 +59,7 @@ const navigatorLocale = getNavigatorLang();
 var localeToSet = "en";
 
 if (navigatorLocale.includes(LOCALE_FR)) {
-  //localeToSet = "fr";
+  localeToSet = "fr";
 }
 
 const i18n = createI18n({
