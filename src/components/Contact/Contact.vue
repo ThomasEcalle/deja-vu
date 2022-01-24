@@ -7,7 +7,7 @@ import SelectField from './SelectField.vue';
 import TextArea from './TextArea.vue';
 import ContactSubmit from './ContactSubmit.vue';
 import { useStore } from 'vuex';
-import '../../i18n'
+import i18n from '../../i18n';
 
 const store = useStore();
 
@@ -18,7 +18,7 @@ var lastNameValue = ref('');
 var emailValue = ref('');
 var phoneValue = ref('');
 var phoneValue = ref('');
-var offersValue = ref(offers[0]);
+var offersValue = ref(offers[0].getMenuTitle(i18n.getLocale()));
 var messageValue = ref('');
 
 var missingFields = ref(false);

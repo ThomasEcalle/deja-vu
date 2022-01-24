@@ -1,6 +1,7 @@
 <script setup>
 
 import { useStore } from 'vuex';
+import i18n from '../../i18n';
 
 const props = defineProps({
     name: String,
@@ -25,7 +26,11 @@ const store = useStore();
                 :name="name"
                 id="name"
             >
-                <option v-for="item in offers" class="text-current" :value="item">{{ item }}</option>
+                <option
+                    v-for="item in offers"
+                    class="text-current"
+                    :value="item.getMenuTitle(i18n.getLocale())"
+                >{{ item.getMenuTitle(i18n.getLocale()) }}</option>
             </select>
             <div
                 class="contact-input pointer-events-none absolute inset-y-0 right-3 flex items-center px-2 text-gray-700"

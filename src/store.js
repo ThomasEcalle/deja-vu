@@ -162,13 +162,7 @@ export default new Vuex.Store({
             return state.pages.filter(page => !page.b2c);
         },
         allPages: (state) => {
-            const result = [];
-
-            state.pages.forEach(element => {
-                result.push(element.menuTitle);
-            });
-
-            return result;
+            return state.pages;
         },
         allOthers: (state) => {
             return state.others;
