@@ -24,9 +24,8 @@ export default function (element, done) {
         targets: contactLabels,
         opacity: [1, 0],
     }, "-=1000").add({
-        targets: '.letter',
+        targets: title,
         opacity: [1, 0],
-        delay: (el, i) => (GLOBAL_LETTERS_DELAY_DURATION / 3) * (i + 1)
     }, "-=1000")
 
     timeline.play();
