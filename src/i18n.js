@@ -1,5 +1,4 @@
 import { createI18n } from "vue3-i18n";
-import { LOCALE_FR } from "./constants";
 
 function getNavigatorLang() {
   if (localStorage.selectedLocale != undefined) {
@@ -13,7 +12,7 @@ function getNavigatorLang() {
 }
 
 const messages = {
-  en: {
+  "en-US": {
     homeTitle1: "We abolish the boundaries of space",
     homeTitle2: "and time creating immersive experiences",
     b2bTitle: "Professionals",
@@ -33,7 +32,7 @@ const messages = {
     messagePlaceHolder: "Describe your project here",
     errorPlaceHolder: "Please complete this field."
   },
-  fr: {
+  "fr-FR": {
     homeTitle1: "Nous abolissons les frontières de l'espace",
     homeTitle2: "et du temps en créant des experiences immersives",
     b2bTitle: "Professionnels",
@@ -56,10 +55,10 @@ const messages = {
 };
 
 const navigatorLocale = getNavigatorLang();
-var localeToSet = "en";
+var localeToSet = "en-US";
 
-if (navigatorLocale.includes(LOCALE_FR)) {
-  localeToSet = "fr";
+if (navigatorLocale.includes("fr")) {
+  localeToSet = "fr-FR";
 }
 
 const i18n = createI18n({

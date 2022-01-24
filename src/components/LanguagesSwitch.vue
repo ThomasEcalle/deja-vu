@@ -7,15 +7,15 @@ import i18n from './../i18n';
 const currentLocale = ref(i18n.getLocale());
 
 function onFrenchClicked() {
-    i18n.setLocale("fr");
-    localStorage.selectedLocale = "fr";
-    currentLocale.value = "fr";
+    i18n.setLocale("fr-FR");
+    localStorage.selectedLocale = "fr-FR";
+    currentLocale.value = "fr-FR";
 }
 
 function onEnglishClicked() {
-    i18n.setLocale("en");
-    localStorage.selectedLocale = "en";
-    currentLocale.value = "en";
+    i18n.setLocale("en-US");
+    localStorage.selectedLocale = "en-US";
+    currentLocale.value = "en-US";
 }
 
 </script>

@@ -8,6 +8,7 @@ export class Page {
         description,
         b2c,
         videoLink,
+        translations,
         ) {
         this.id = id,
         this.menuTitle = menuTitle;
@@ -17,5 +18,66 @@ export class Page {
         this.description = description;
         this.b2c = b2c;
         this.videoLink = videoLink;
+        this.translations = translations;
+    }
+
+    getMenuTitle(locale) {
+        if (this.translations[locale] != undefined) {
+            return this.translations[locale]["menuTitle"];
+        }
+
+        if (this.translations["en-US"] != undefined) {
+            return this.translations["en-US"]["menuTitle"];
+        }
+        
+        return this.menuTitle;
+    }
+
+    getDetailTitleStroked(locale) {
+        if (this.translations[locale] != undefined) {
+            return this.translations[locale]["detailTitleStroked"];
+        }
+
+        if (this.translations["en-US"] != undefined) {
+            return this.translations["en-US"]["detailTitleStroked"];
+        }
+        
+        return this.detailTitleStroked;
+    }
+
+    getDetailTitleNormal(locale) {
+        if (this.translations[locale] != undefined) {
+            return this.translations[locale]["detailTitleNormal"];
+        }
+
+        if (this.translations["en-US"] != undefined) {
+            return this.translations["en-US"]["detailTitleNormal"];
+        }
+        
+        return this.detailTitleNormal;
+    }
+
+    getSubTitle(locale) {
+        if (this.translations[locale] != undefined) {
+            return this.translations[locale]["subtitle"];
+        }
+
+        if (this.translations["en-US"] != undefined) {
+            return this.translations["en-US"]["subtitle"];
+        }
+        
+        return this.subTitle;
+    }
+
+    getDescription(locale) {
+        if (this.translations[locale] != undefined) {
+            return this.translations[locale]["description"];
+        }
+
+        if (this.translations["en-US"] != undefined) {
+            return this.translations["en-US"]["description"];
+        }
+        
+        return this.description;
     }
 }

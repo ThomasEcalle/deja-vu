@@ -3,6 +3,7 @@
 import { MENU, OPEN_OTHER_DETAIL, OPEN_PAGE_DETAIL, SET_CONTENT } from '../../constants'
 import { useStore } from "vuex";
 import MenuItem from './MenuItem.vue';
+import i18n from '../../i18n';
 
 const store = useStore();
 
@@ -25,20 +26,30 @@ function onOtherClicked(itemId) {
         class="absolute h-full w-full dark:text-white text-black mt-[20px] sm:mt-[40px] pl-[25px] sm:pl-[39px] duration-1000"
         :id="MENU"
     >
-        <div class="w-[500px] grid sm:grid-cols-2 grid-cols-1 ">
+        <div class="w-[500px] grid sm:grid-cols-2 grid-cols-1">
             <div>
-                <h3 class="menu-category font-normal text-[12px] sm:text-[15px] mb-[0px] sm:mb-[10px] leading-[34px]">{{ $t("b2bTitle") }}</h3>
+                <h3
+                    class="menu-category font-normal text-[12px] sm:text-[15px] mb-[0px] sm:mb-[10px] leading-[34px]"
+                >{{ $t("b2bTitle") }}</h3>
                 <ul>
                     <li v-for="item in b2bPages">
-                        <MenuItem :title="item.menuTitle" :onClick="() => onClick(item.id)" />
+                        <MenuItem
+                            :title="item.getMenuTitle(i18n.getLocale())"
+                            :onClick="() => onClick(item.id)"
+                        />
                     </li>
                 </ul>
             </div>
             <div>
-                <h3 class="menu-category text-[12px] sm:text-[15px] mb-[0px] sm:mb-[10px] leading-[34px] mt-[22px] sm:mt-0">{{ $t("b2cTitle") }}</h3>
+                <h3
+                    class="menu-category text-[12px] sm:text-[15px] mb-[0px] sm:mb-[10px] leading-[34px] mt-[22px] sm:mt-0"
+                >{{ $t("b2cTitle") }}</h3>
                 <ul>
                     <li v-for="item in b2cPages">
-                        <MenuItem :title="item.menuTitle" :onClick="() => onClick(item.id)" />
+                        <MenuItem
+                            :title="item.getMenuTitle(i18n.getLocale())"
+                            :onClick="() => onClick(item.id)"
+                        />
                     </li>
                 </ul>
             </div>

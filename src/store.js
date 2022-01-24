@@ -3,7 +3,7 @@ import { MENU, HOME, SET_CONTENT, CLOSE_MENU, OPEN_MENU, TOGGLE_DARKMODE, OPEN_P
 import { Other } from './models/Other';
 import { Page } from './models/Page'
 
-const BASE_URL = "https://main-bvxea6i-wv47clkpjwwaq.fr-3.platformsh.site";
+const BASE_URL = "http://localhost:8055" //"https://main-bvxea6i-wv47clkpjwwaq.fr-3.platformsh.site";
 
 export default new Vuex.Store({
     state: {
@@ -15,6 +15,7 @@ export default new Vuex.Store({
         lastContent: HOME,
         selectedPage: null,
         selectedOther: null,
+        currentLocale: null,
         pages: [],
         others: [],
     },
@@ -23,7 +24,7 @@ export default new Vuex.Store({
             state.audio = new Audio(`${BASE_URL}/assets/508bad8b-1e17-40e3-93a4-0dceffb28313.wav`);
             state.audio.preload = "auto";
 
-            const res = await fetch(`${BASE_URL}/items/Pages`, {
+            const res = await fetch(`${BASE_URL}/items/Pages?fields=*.*`, {
                 method: 'get',
                 headers: {
                     'content-type': 'application/json'
@@ -34,8 +35,16 @@ export default new Vuex.Store({
                 console.log(`Error retrieving pages: ${res.statusText}`);
             } else {
                 const json = await res.json();
+
                 for (var i = 0; i < json.data.length; i++) {
+
+                    const retrievedTranslations = json.data[i]['translations'];
+
+                    const enTranslations = retrievedTranslations.filter(translation => translation["languages_id"].includes("en"));
+                    const frTranslations = retrievedTranslations.filter(translation => translation["languages_id"].includes("fr"));
+
                     const item = json.data[i];
+
                     state.pages.push(
                         new Page(
                             item.id,
@@ -46,6 +55,10 @@ export default new Vuex.Store({
                             item.description,
                             item.b2c,
                             item.videoLink,
+                            {
+                                "en-US": enTranslations[0],
+                                "fr-FR": frTranslations[0],
+                            }
                         )
                     );
                 }
