@@ -13,8 +13,8 @@ function getNavigatorLang() {
 
 const messages = {
   "en-US": {
-    homeTitle1: "We abolish the boundaries of space",
-    homeTitle2: "and time creating immersive experiences",
+    homeTitle1: "We transcend the borders between space",
+    homeTitle2: "and time by creating immersive experiences",
     b2bTitle: "Professionals",
     b2cTitle: "Individuals",
     contactButton: "Contactez - nous   -   Contactez - nous    -   ",
