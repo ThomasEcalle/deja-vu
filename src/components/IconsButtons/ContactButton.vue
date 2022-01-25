@@ -40,6 +40,7 @@ var hovering = ref(false);
                 <text fill="currentColor">
                     <textPath
                         xlink:href="#circle"
+                        textLength="220" lengthAdjust="spacing"
                     >{{ $t("contactButton") }}</textPath>
                 </text>
             </svg>
