@@ -34,7 +34,7 @@ const messages = {
   },
   "fr-FR": {
     homeTitle1: "Nous abolissons les frontières de l'espace",
-    homeTitle2: "et du temps en créant des experiences immersives",
+    homeTitle2: "et du temps en créant des expériences immersives",
     b2bTitle: "Professionnels",
     b2cTitle: "Particuliers",
     contactButton: "Contactez- nous   -   Contactez - nous    -   ",
