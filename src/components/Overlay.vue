@@ -12,7 +12,7 @@ const store = useStore();
     <transition name="toto">
         <div
             v-if="!store.state.darkMode"
-            class="overlay absolute w-full h-full"
+            class="overlay absolute w-screen h-screen"
             :class="{ menuOverlay: store.state.content != HOME }"
         />
     </transition>

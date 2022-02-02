@@ -29,7 +29,7 @@ function onModeClicked() {
 </script>
 
 <template>
-  <div class=" :w-screen :h-screen">
+  <div class="w-screen h-screen">
     <transition duration="2000ms">
       <video
         v-show="!store.state.darkMode"
