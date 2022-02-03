@@ -16,7 +16,7 @@ const selectedOther = store.getters.getSelectedOther;
         :id="PAGE_OTHER"
     >
         <div class="sm:h-full h-[95%] w-full">
-            <div class="h-[85%] sm:h-full w-[95%] sm:w-[70%] overflow-scroll sm:overflow-none no-scrollbar sm:flex sm:flex-col sm:justify-center">
+            <div class="h-[85%] sm:h-full w-[95%] sm:w-[70%] overflow-scroll no-scrollbar sm:flex sm:flex-col sm:justify-center">
                 <h2 id="other-detail-title" class="stroked text-[5.5vh] font-lemonmilk">{{ selectedOther.getTitle(i18n.getLocale()) }}</h2>
                 <div id="other-detail-description" class="text-[4vw] sm:text-[1.8vh] font-normal sm:mt-0 mt-[10px]" 
                 v-html="selectedOther.getDescription(i18n.getLocale())"></div>

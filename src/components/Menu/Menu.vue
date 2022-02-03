@@ -60,11 +60,25 @@ function onOtherClicked(itemId) {
         <ul>
             <li v-for="item in others">
                 <h4
+                    v-if="item.bold"
                     :onClick="() => onOtherClicked(item.id)"
                     class="menu-item font-montserrat font-bold cursor-pointer text-[12px] sm:text-[15px] dark:hover:text-black hover:text-white hover:duration-700 leading-[34px] hover:ml-[5px] uppercase"
                 >{{ item.getTitle(i18n.getLocale()) }}</h4>
+
+                <h4
+                    v-else
+                    :onClick="() => onOtherClicked(item.id)"
+                    class="menu-item font-montserrat cursor-pointer text-[12px] sm:text-[15px] dark:hover:text-black hover:text-white hover:duration-700 leading-[34px] hover:ml-[5px] uppercase"
+                >{{ item.getTitle(i18n.getLocale()) }}</h4>
             </li>
         </ul>
+
+        <h4
+        class="menu-item font-montserrat text-[12px] sm:text-[15px] leading-[34px] uppercase"
+        >
+            © Déja vu 2022. All right reserved.
+        </h4>
+        
     </div>
 </template>
 

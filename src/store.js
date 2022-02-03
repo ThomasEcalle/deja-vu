@@ -98,6 +98,7 @@ export default new Vuex.Store({
                             item.id,
                             item.title,
                             item.description,
+                            item.bold,
                             {
                                 "en-US": enTranslations != undefined ? enTranslations[0] : undefined,
                                 "fr-FR": frTranslations != undefined ? frTranslations[0] : undefined,

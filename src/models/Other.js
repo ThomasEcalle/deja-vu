@@ -3,11 +3,13 @@ export class Other {
         id,
         title,
         description,
+        bold,
         translations,
     ) {
         this.id = id;
         this.title = title;
         this.description = description;
+        this.bold = bold;
         this.translations = translations;
     }
 
