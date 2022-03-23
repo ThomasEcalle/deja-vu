@@ -6,6 +6,13 @@
 }
 
 @font-face {
+    font-family: 'ArialBlack';
+    font-weight: normal;
+    font-style: normal;
+    src: local('ArialBlack'), url('./fonts/ArialBlack.ttf') format('truetype');
+}
+
+@font-face {
     font-family: 'LemonMilk';
     font-weight: bold;
     font-style: normal;

@@ -12,6 +12,7 @@ module.exports = {
       },
       fontFamily: {
         'lemonmilk': ['LemonMilk', 'ui-sans-serif', 'sans-serif'],
+        'arialblack': ['ArialBlack', 'ui-sans-serif', 'sans-serif'],
         'sans': ['Montserrat'],
       },
     }
