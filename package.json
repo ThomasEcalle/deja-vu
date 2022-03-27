@@ -15,6 +15,7 @@
     "vue": "3.2.25",
     "vue-animejs": "2.1.1",
     "vue3-i18n": "1.1.4",
+    "vue3-youtube": "^0.1.9",
     "vuex": "4.0.2"
   },
   "devDependencies": {
