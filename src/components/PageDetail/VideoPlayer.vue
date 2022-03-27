@@ -20,7 +20,7 @@ console.log(playerHeight);
 </script>
 
 <template>
-    <div class="h-full w-full max-h-[500px] max-w-[646px] flex flex-col justify-center">
+    <div class="sm:h-full w-full max-h-[500px] max-w-[646px] flex flex-col justify-center">
         <div class="w-[90%] max-h-[410px] max-w-[646px] aspect-video">
             <YouTube 
                 src="https://www.youtube.com/watch?v=jNQXAC9IVRw" 
