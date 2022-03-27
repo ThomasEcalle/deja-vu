@@ -16,28 +16,29 @@ const normalTitle = page.getDetailTitleNormal(i18n.getLocale()) != null ? page.g
 </script>
 
 <template>
-    <div class="h-[95%] w-full flex flex-col sm:flex-row items-center overflow-scroll no-scrollbar">
+    <div
+        class="h-[95%] w-full flex flex-col sm:flex-row items-center overflow-scroll no-scrollbar"
+        :id="PAGE_DETAIL"
+    >
         <div class="sm:w-[40%]">
             <div
                 class="no-scrollbar text-justify w-[95%] sm:w-[317px] overflow-scroll sm:overflow-visible dark:text-white text-black mt-[30px] sm-mt[0px] ml-[10px] sm:ml-[6vw] transition-colors duration-1000"
-                :id="PAGE_DETAIL"
             >
-                <div class="text-justify font-arialblack text-[40px] sm:text-[50px] tracking-[12.06px] sm:tracking-[9.57px] uppercase leading-[1.1em] sm:leading-[60px]">
-                    <h3
-                    class="stroked mr-[12px]"
-                >{{ strokedTitle }}</h3>
-                <h3
-                    class="mr-[30px]"
-                >{{ normalTitle }}</h3>
+                <div
+                    class="text-justify font-arialblack text-[40px] sm:text-[50px] tracking-[12.06px] sm:tracking-[9.57px] uppercase leading-[1.1em] sm:leading-[50px]"
+                    id="detail-title"
+                >
+                    <h3 class="stroked mr-[12px]">{{ strokedTitle }}</h3>
+                    <h3 class="mr-[30px]">{{ normalTitle }}</h3>
                 </div>
-                
+
                 <h4
                     id="detail-subtitle"
                     class="break-words text-[9.6px] sm:text-[12px] uppercase tracking-[1.92px] font-bold mb-[21px] sm:mb-[4.5vh] mt-[10px] sm:mt-[-3px]"
                 >{{ page.getSubTitle(i18n.getLocale()) }}</h4>
 
                 <div
-                    class="w-full border-t dark:border-[#fff] border-[#000] mb-[4px] sm:mb-[15px] transition-colors duration-1000"
+                    class="w-full border-t dark:border-[#fff] border-[#000] mb-[4px] sm:mb-[15px] transition-colors duration-1000 detail-separators"
                 ></div>
 
                 <p
@@ -47,7 +48,7 @@ const normalTitle = page.getDetailTitleNormal(i18n.getLocale()) != null ? page.g
                 ></p>
             </div>
         </div>
-        <div class="sm:w-[60%] sm:h-full flex justify-center items-center mt-[16px] sm:mt-[0px]">
+        <div class="sm:w-[60%] flex justify-center items-center mt-[16px] sm:mt-[0px]" id="player-container">
             <VideoPlayer :videoLink="page.videoLink" />
             <!--<VideoPlayer
                 v-if="page.videoLink != undefined && page.videoLink != null"

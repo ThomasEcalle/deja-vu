@@ -7,15 +7,11 @@ const props = defineProps({
 })
 
 function onReady() {
-    console.log("Youtube player ready");
 }
 
 
 const playerWidth = innerWidth * .9 > 646 ? 646 : innerWidth * .9;
 const playerHeight = playerWidth / 1.77;
-
-console.log(playerWidth);
-console.log(playerHeight);
 
 </script>
 
@@ -30,7 +26,7 @@ console.log(playerHeight);
                 ref="youtube" 
                 />
         </div>
-        <div class="border-t border-[#000] mt-[19.5px] mb-[16px] w-[174px]"></div>
+        <div class="border-t dark:border-[#fff] border-[#000] mt-[19.5px] mb-[16px] w-[174px] transition-colors duration-1000 detail-separators"></div>
         <!--Put icons here-->
     </div>
 </template>
