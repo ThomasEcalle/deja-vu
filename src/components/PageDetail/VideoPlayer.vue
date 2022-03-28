@@ -35,7 +35,7 @@ const playerHeight = playerWidth / 1.77;
         ></div>
         <div class="flex flex-row space-x-[21px]">
             <svg
-                class="w-[20px] h-[33px] fill-current dark:fill-white transition-colors duration-1000"
+                class="detail-svg w-[20px] h-[33px] fill-current dark:fill-white transition-colors duration-1000"
                 viewBox="0 0 20 33"
                 xmlns="http://www.w3.org/2000/svg"
             >
@@ -48,7 +48,7 @@ const playerHeight = playerWidth / 1.77;
             </svg>
 
             <svg
-                class="w-[26px] h-[33px] fill-current dark:fill-white transition-colors duration-1000"
+                class="detail-svg w-[26px] h-[33px] fill-current dark:fill-white transition-colors duration-1000"
                 viewBox="0 0 26 33"
                 xmlns="http://www.w3.org/2000/svg"
             >
@@ -61,7 +61,7 @@ const playerHeight = playerWidth / 1.77;
             </svg>
 
             <svg
-                class="w-[38px] h-[33px] fill-current dark:fill-white transition-colors duration-1000"
+                class="detail-svg w-[38px] h-[33px] fill-current dark:fill-white transition-colors duration-1000"
                 viewBox="0 0 38 33"
                 xmlns="http://www.w3.org/2000/svg"
             >
@@ -77,7 +77,7 @@ const playerHeight = playerWidth / 1.77;
             </svg>
 
             <svg
-                class="w-[39px] h-[20px] fill-current dark:fill-white transition-colors duration-1000"
+                class="detail-svg w-[39px] h-[20px] fill-current dark:fill-white transition-colors duration-1000"
                 viewBox="0 0 39 20"
                 xmlns="http://www.w3.org/2000/svg"
             >

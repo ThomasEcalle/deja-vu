@@ -7,6 +7,7 @@ export default function (element, done) {
     const description = document.getElementById("detail-description");
     const playerContainer = document.getElementById("player-container");
     const detailSeparators = document.getElementsByClassName("detail-separators");
+    const detailSVGS = document.getElementsByClassName("detail-svg");
 
     var timeline = anime.timeline({
         easing: GLOBAL_ANIMATION_EASING,
@@ -15,8 +16,8 @@ export default function (element, done) {
     });
 
     timeline
-        
-        
+
+
         .add({
             targets: title,
             opacity: [1, 0],
@@ -30,10 +31,17 @@ export default function (element, done) {
             targets: subtitle,
             opacity: [1, 0],
             translateX: [0, -10],
-        }, '-=700').add({
+        }, '-=700')
+        .add({
+            targets: detailSVGS,
+            opacity: [1, 0],
+            translateX: [0, -10],
+        }, '-=700')
+        .add({
             targets: description,
             opacity: [1, 0],
-        }, '-=700').add({
+        }, '-=700')
+        .add({
             targets: detailSeparators,
             opacity: [1, 0],
         }, '-=700');
