@@ -8,6 +8,10 @@ import LanguagesSwitch from './LanguagesSwitch.vue';
 
 const store = useStore();
 
+function isButtonVisible() {
+    return store.state.content != CONTACT && (store.state.content != PAGE_DETAIL || innerWidth > 700);
+}
+
 </script>
 
 <template>
@@ -20,7 +24,7 @@ const store = useStore();
         
 
         <transition name="toto" duration="1200">
-            <ContactButton v-show="store.state.content != CONTACT && store.state.content != PAGE_DETAIL" 
+            <ContactButton v-show="isButtonVisible()"
             class="absolute bottom-0 right-0 sm:bottom-[20px] sm:right-[20px] active:scale-[0.8] duration-500 scale-[0.85] sm:scale-[1]" />
         </transition>
     </div>
