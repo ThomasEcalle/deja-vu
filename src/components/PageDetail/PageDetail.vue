@@ -20,7 +20,7 @@ const normalTitle = page.getDetailTitleNormal(i18n.getLocale()) != null ? page.g
         class="absolute sm:h-full h-[95%] w-full flex flex-col sm:flex-row items-center overflow-scroll no-scrollbar"
         :id="PAGE_DETAIL"
     >
-        <div class="sm:w-[40%] sm:min-h-[70%]">
+        <div class="sm:w-[40%] sm:h-[80%]">
             <div
                 class="text-justify w-[95%] sm:w-[317px] sm:overflow-scroll sm:no-scrollbar sm:overflow-visible dark:text-white text-black ml-[10px] sm:ml-[6vw] transition-colors duration-1000"
             >
@@ -48,7 +48,7 @@ const normalTitle = page.getDetailTitleNormal(i18n.getLocale()) != null ? page.g
                 ></p>
             </div>
         </div>
-        <div class="sm:w-[60%] flex justify-center items-start pt-[16px] sm:pt-[0px] sm:min-h-[70%]" id="player-container">
+        <div class="sm:w-[60%] flex justify-center items-start pt-[16px] sm:pt-[0px] sm:h-[80%]" id="player-container">
             <VideoPlayer :videoLink="page.videoLink" />
             <!--<VideoPlayer
                 v-if="page.videoLink != undefined && page.videoLink != null"
