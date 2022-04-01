@@ -14,22 +14,27 @@ const store = useStore();
 
 const page = store.getters.getSelectedPage;
 
-const playerWidth = innerWidth * .9 > 646 ? 646 : innerWidth * .9;
-const playerHeight = playerWidth / 1.77;
+var playerHeight = innerHeight * 0.45;
+var playerWidth = playerHeight * 1.57;
+
+if (innerWidth < 600) {
+    playerWidth = innerWidth * 0.9;
+    playerHeight = playerWidth * 0.6;
+}
+
+
 
 </script>
 
 <template>
-    <div class="sm:h-full w-full max-h-[500px] max-w-[646px] flex flex-col justify-center">
-        <div class="w-[90%] max-h-[410px] max-w-[646px] aspect-video">
-            <YouTube
-                src="https://www.youtube.com/watch?v=jNQXAC9IVRw"
-                @ready="onReady"
-                :width="playerWidth"
-                :height="playerHeight"
-                ref="youtube"
-            />
-        </div>
+    <div class="sm:w-full h-full max-w-[646px] pl-[10px] sm:pl-[0px]">
+        <YouTube
+            src="https://www.youtube.com/watch?v=jNQXAC9IVRw"
+            @ready="onReady"
+            :width="playerWidth"
+            :height="playerHeight"
+            ref="youtube"
+        />
         <div
             class="border-t dark:border-[#fff] border-[#000] mt-[19.5px] mb-[16px] w-[174px] transition-colors duration-1000 detail-separators"
         ></div>

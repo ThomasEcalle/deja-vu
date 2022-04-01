@@ -23,10 +23,10 @@ function onOtherClicked(itemId) {
 
 <template>
     <div
-        class="absolute h-full w-full dark:text-white text-black mt-[20px] sm:mt-[40px] pl-[25px] sm:pl-[39px] duration-1000"
+        class="m:h-full w-full dark:text-white text-black mt-[20px] sm:mt-[40px] pl-[25px] sm:pl-[39px] duration-1000"
         :id="MENU"
     >
-        <div class="w-[500px] grid sm:grid-cols-2 grid-cols-1">
+        <div class="w-full sm:w-[500px] grid sm:grid-cols-2 grid-cols-1">
             <div>
                 <h3
                     class="menu-category font-normal text-[12px] sm:text-[15px] mb-[0px] sm:mb-[10px] leading-[34px]"

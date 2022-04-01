@@ -17,24 +17,24 @@ const normalTitle = page.getDetailTitleNormal(i18n.getLocale()) != null ? page.g
 
 <template>
     <div
-        class="h-[95%] w-full flex flex-col sm:flex-row items-center overflow-scroll no-scrollbar"
+        class="absolute sm:h-full h-[95%] w-full flex flex-col sm:flex-row items-center overflow-scroll no-scrollbar"
         :id="PAGE_DETAIL"
     >
-        <div class="sm:w-[40%]">
+        <div class="sm:w-[40%] sm:min-h-[70%]">
             <div
-                class="no-scrollbar text-justify w-[95%] sm:w-[317px] overflow-scroll sm:overflow-visible dark:text-white text-black mt-[30px] sm-mt[0px] ml-[10px] sm:ml-[6vw] transition-colors duration-1000"
+                class="text-justify w-[95%] sm:w-[317px] sm:overflow-scroll sm:no-scrollbar sm:overflow-visible dark:text-white text-black ml-[10px] sm:ml-[6vw] transition-colors duration-1000"
             >
                 <div
-                    class="text-justify font-arialblack text-[40px] sm:text-[50px] tracking-[12.06px] sm:tracking-[9.57px] uppercase leading-[1.1em] sm:leading-[50px]"
+                    class="text-justify font-arialblack text-[40px] sm:text-[50px] sm:mt-[-8px] tracking-[12.06px] sm:tracking-[9.57px] uppercase leading-[1.1em] sm:leading-[50px]"
                     id="detail-title"
                 >
-                    <h3 class="stroked mr-[12px]">{{ strokedTitle }}</h3>
-                    <h3 class="mr-[30px]">{{ normalTitle }}</h3>
+                    <h3 class="stroked">{{ strokedTitle }}</h3>
+                    <h3>{{ normalTitle }}</h3>
                 </div>
 
                 <h4
                     id="detail-subtitle"
-                    class="break-words text-[9.6px] sm:text-[12px] uppercase tracking-[1.92px] font-bold mb-[21px] sm:mb-[4.5vh] mt-[10px] sm:mt-[-3px]"
+                    class="break-words text-[9.6px] sm:text-[12px] uppercase tracking-[1.92px] font-bold mb-[21px] sm:mb-[4.5vh] mt-[2px] sm:mt-[-3px]"
                 >{{ page.getSubTitle(i18n.getLocale()) }}</h4>
 
                 <div
@@ -48,7 +48,7 @@ const normalTitle = page.getDetailTitleNormal(i18n.getLocale()) != null ? page.g
                 ></p>
             </div>
         </div>
-        <div class="sm:w-[60%] flex justify-center items-center mt-[16px] sm:mt-[0px]" id="player-container">
+        <div class="sm:w-[60%] flex justify-center items-start pt-[16px] sm:pt-[0px] sm:min-h-[70%]" id="player-container">
             <VideoPlayer :videoLink="page.videoLink" />
             <!--<VideoPlayer
                 v-if="page.videoLink != undefined && page.videoLink != null"
