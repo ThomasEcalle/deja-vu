@@ -17,7 +17,7 @@ const normalTitle = page.getDetailTitleNormal(i18n.getLocale()) != null ? page.g
 
 <template>
     <div
-        class="absolute sm:h-full h-full w-full flex flex-col sm:flex-row items-center overflow-scroll no-scrollbar"
+        class="absolute sm:h-full h-full w-full flex flex-col sm:flex-row sm:pt-[13vh] overflow-scroll no-scrollbar"
         :id="PAGE_DETAIL"
     >
         <div class="sm:w-[40%] sm:h-[80%]">
