@@ -17,12 +17,12 @@ const normalTitle = page.getDetailTitleNormal(i18n.getLocale()) != null ? page.g
 
 <template>
     <div
-        class="absolute sm:h-full h-[95%] w-full flex flex-col sm:flex-row items-center overflow-scroll no-scrollbar"
+        class="absolute sm:h-full h-full w-full flex flex-col sm:flex-row items-center overflow-scroll no-scrollbar"
         :id="PAGE_DETAIL"
     >
         <div class="sm:w-[40%] sm:h-[80%]">
             <div
-                class="text-justify w-[95%] sm:w-[328px] dark:text-white text-black ml-[10px] sm:ml-[6vw] transition-colors duration-1000"
+                class="text-justify w-[95%] sm:w-[328px] dark:text-white text-black ml-[10px] sm:ml-[25%] transition-colors duration-1000"
             >
                 <div
                     class="text-justify font-arialblack text-[40px] sm:text-[50px] sm:mt-[-8px] tracking-[12.06px] sm:tracking-[9.57px] uppercase leading-[1.1em] sm:leading-[50px]"
