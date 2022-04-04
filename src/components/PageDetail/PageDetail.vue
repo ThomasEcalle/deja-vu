@@ -22,7 +22,7 @@ const normalTitle = page.getDetailTitleNormal(i18n.getLocale()) != null ? page.g
     >
         <div class="sm:w-[40%] sm:h-[80%]">
             <div
-                class="text-justify w-[95%] sm:w-[317px] sm:overflow-scroll sm:no-scrollbar sm:overflow-visible dark:text-white text-black ml-[10px] sm:ml-[6vw] transition-colors duration-1000"
+                class="text-justify w-[95%] sm:w-[328px] dark:text-white text-black ml-[10px] sm:ml-[6vw] transition-colors duration-1000"
             >
                 <div
                     class="text-justify font-arialblack text-[40px] sm:text-[50px] sm:mt-[-8px] tracking-[12.06px] sm:tracking-[9.57px] uppercase leading-[1.1em] sm:leading-[50px]"
