@@ -6,6 +6,7 @@ export default function (element, done) {
     const title = document.getElementById("detail-title");
     const subtitle = document.getElementById("detail-subtitle");
     const description = document.getElementById("detail-description");
+    const approach = document.getElementById("detail-approach");
     const playerContainer = document.getElementById("player-container");
     const detailSeparators = document.getElementsByClassName("detail-separators");
     const detailSVGS = document.getElementsByClassName("detail-svg");
@@ -42,9 +43,13 @@ export default function (element, done) {
             opacity: [0, 1],
         }, '-=1000')
         .add({
+            targets: approach,
+            opacity: [0, 1],
+        }, '-=900')
+        .add({
             targets: detailSeparators,
             opacity: [0, 1],
-        }, '-=1000');
+        }, '-=800');
 
     timeline.play();
 }

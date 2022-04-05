@@ -6,6 +6,7 @@ export class Page {
         detailTitleNormal,
         subTitle,
         description,
+        approach,
         b2c,
         videoLink,
         translations,
@@ -16,6 +17,7 @@ export class Page {
         this.detailTitleNormal = detailTitleNormal;
         this.subTitle = subTitle;
         this.description = description;
+        this.approach = approach;
         this.b2c = b2c;
         this.videoLink = videoLink;
         this.translations = translations;
@@ -79,5 +81,17 @@ export class Page {
         }
         
         return this.description;
+    }
+
+    getApproach(locale) {
+        if (this.translations[locale] != undefined) {
+            return this.translations[locale]["approach"];
+        }
+
+        if (this.translations["en-US"] != undefined) {
+            return this.translations["en-US"]["approach"];
+        }
+        
+        return this.approach;
     }
 }

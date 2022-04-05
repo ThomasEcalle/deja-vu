@@ -57,6 +57,7 @@ export default new Vuex.Store({
                             item.detailTitleNormal,
                             item.subtitle,
                             item.description,
+                            item.approach,
                             item.b2c,
                             item.videoLink,
                             {

@@ -7,6 +7,7 @@ export default function (element, done) {
     const description = document.getElementById("detail-description");
     const playerContainer = document.getElementById("player-container");
     const detailSeparators = document.getElementsByClassName("detail-separators");
+    const approach = document.getElementById("detail-approach");
     const detailSVGS = document.getElementsByClassName("detail-svg");
 
     var timeline = anime.timeline({
@@ -39,6 +40,10 @@ export default function (element, done) {
         }, '-=700')
         .add({
             targets: description,
+            opacity: [1, 0],
+        }, '-=700')
+        .add({
+            targets: approach,
             opacity: [1, 0],
         }, '-=700')
         .add({
