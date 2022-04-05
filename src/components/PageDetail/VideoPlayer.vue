@@ -29,7 +29,7 @@ if (innerWidth < 600) {
 <template>
     <div class="sm:w-full h-full max-w-[646px] pl-[10px] sm:pl-[0px]">
         <YouTube
-            src="https://www.youtube.com/watch?v=jNQXAC9IVRw"
+            :src="videoLink"
             @ready="onReady"
             :width="playerWidth"
             :height="playerHeight"

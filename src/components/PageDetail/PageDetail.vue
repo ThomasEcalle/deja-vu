@@ -70,11 +70,10 @@ function normalTitle(locale) {
             class="sm:w-[60%] flex justify-center items-start pt-[16px] sm:pt-[0px] sm:h-[80%]"
             id="player-container"
         >
-            <VideoPlayer :videoLink="page.videoLink" />
-            <!--<VideoPlayer
+            <VideoPlayer
                 v-if="page.videoLink != undefined && page.videoLink != null"
                 :videoLink="page.videoLink"
-            />-->
+            />
         </div>
     </div>
 </template>
